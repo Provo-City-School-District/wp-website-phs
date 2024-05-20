@@ -1,0 +1,4 @@
+/db_data_live/
+.DS_Store
+.env
+/wp-content/
