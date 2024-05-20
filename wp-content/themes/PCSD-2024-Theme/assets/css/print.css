@@ -1,0 +1,39 @@
+@media print {
+  @page {
+    margin: 0 0.8cm 0 0.2cm !important;
+  }
+
+  body {
+    margin: 0;
+    width: 100%;
+    color: #000;
+    background-color: #fff;
+  }
+
+  #mainHeader,
+  #mainFooter,
+  #rightSidebar,
+  #breadcrumbs,
+  #trp-floater-ls {
+    display: none !important;
+  }
+
+  #mainContent {
+    margin-top: unset !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .activePost .feeBreakdown .fee {
+    width: 13%;
+    /* changed from 15% on 02-09-21 WO69524 */
+  }
+
+  .feePost h2:not(:first-of-type) {
+    break-before: page;
+  }
+
+  .activePost .feeBreakdown .fee span {
+    font-size: 12pt !important;
+  }
+
+}

@@ -1,0 +1,204 @@
+/*================================================================================================================
+link marking
+================================================================================================================*/
+/*For adding hidden into for listed links*/
+.fwContent ul li a:after,
+.currentContent ul li a:after,
+.departmentTiles ul li a:after,
+.activePost ul li a:after,
+.grid3 ul li a:after {
+    content: " - External Link";
+    position: absolute;
+    left: -9999px;
+}
+
+.fwContent ul li a[href*="provo.edu"]:after,
+.currentContent ul li a[href*="provo.edu"]:after,
+.departmentTiles ul li a[href*="provo.edu"]:after,
+.activePost ul li a[href*="provo.edu"]:after,
+.grid3 ul li a[href*="provo.edu"]:after {
+    content: " - Internal Link";
+    position: absolute;
+    left: -9999px;
+}
+
+.fwContent ul li a[href*="pdf"]:after,
+.currentContent ul li a[href*="pdf"]:after,
+.departmentTiles ul li a[href*="pdf"]:after,
+.activePost ul li a[href*="pdf"]:after,
+.grid3 ul li a[href*="pdf"]:after {
+    content: " - PDF Document";
+    position: absolute;
+    left: -9999px;
+}
+
+.fwContent ul li a[href*="xls"]:after,
+.currentContent ul li a[href*="xls"]:after,
+.departmentTiles ul li a[href*="xls"]:after,
+.activePost ul li a[href*="xls"]:after,
+.grid3 ul li a[href*="xls"]:after {
+    content: " - XLS Document";
+    position: absolute;
+    left: -9999px;
+}
+
+/*For adding hidden into for in line links*/
+.fwContent p a:before,
+.currentContent p a:before,
+.departmentTiles p a:before,
+.activePost p a:before,
+.grid3 p a:before {
+    content: "External Link - ";
+    position: absolute;
+    left: -9999px;
+}
+
+.fwContent p a[href*="provo.edu"]:before,
+.currentContent p a[href*="provo.edu"]:before,
+.departmentTiles p a[href*="provo.edu"]:before,
+.activePost p a[href*="provo.edu"]:before,
+.grid3 p a[href*="provo.edu"]:before {
+    content: "Internal Link - ";
+    position: absolute;
+    left: -9999px;
+}
+
+.fwContent p a[href*="pdf"]:before,
+.currentContent p a[href*="pdf"]:before,
+.departmentTiles p a[href*="pdf"]:before,
+.activePost p a[href*="pdf"]:before,
+.grid3 p a[href*="pdf"]:before {
+    content: "PDF Document - ";
+    position: absolute;
+    left: -9999px;
+}
+
+.fwContent p a[href*="xls"]:before,
+.currentContent p a[href*="xls"]:before,
+.departmentTiles p a[href*="xls"]:before,
+.activePost p a[href*="xls"]:before,
+.grid3 p a[href*="xls"]:before {
+    content: "XLS Document - ";
+    position: absolute;
+    left: -9999px;
+}
+
+/*For adding icon into for in line links*/
+.fwContent p a:after,
+.currentContent p a:after,
+.departmentTiles p a:after,
+.activePost p a:after,
+.grid3 p a:after {
+    content: " ";
+    display: inline-block;
+    margin-left: 3px;
+    min-width: 0.7em;
+    height: 0.7em;
+    background-size: contain;
+    background-image: url(//globalassets.provo.edu/image/icons/external-link-gray.svg);
+}
+
+.fwContent p a:after img,
+.currentContent p a:after img,
+.departmentTiles p a:after img,
+.activePost p a:after img,
+.grid3 p a:after img {
+    background-image: none;
+}
+
+.fwContent p a[href*="provo.edu"]:after,
+.currentContent p a[href*="provo.edu"]:after,
+.departmentTiles p a[href*="provo.edu"]:after,
+.activePost p a[href*="provo.edu"]:after,
+.grid3 p a[href*="provo.edu"]:after {
+    display: inline-block;
+    background-image: url(//globalassets.provo.edu/image/icons/file-blue.png);
+}
+
+.fwContent p a[href*="provo.edu"]:after img,
+.currentContent p a[href*="provo.edu"]:after img,
+.departmentTiles p a[href*="provo.edu"]:after img,
+.activePost p a[href*="provo.edu"]:after img,
+.grid3 p a[href*="provo.edu"]:after img {
+    background-image: none;
+}
+
+.fwContent p a[href*="pdf"]:after,
+.currentContent p a[href*="pdf"]:after,
+.departmentTiles p a[href*="pdf"]:after,
+.activePost p a[href*="pdf"]:after,
+.grid3 p a[href*="pdf"]:after {
+    content: "(PDF) ";
+    display: inline;
+    background-image: none;
+}
+
+.fwContent p a[href*="xls"]:after,
+.currentContent p a[href*="xls"]:after,
+.departmentTiles p a[href*="xls"]:after,
+.activePost p a[href*="xls"]:after,
+.grid3 p a[href*="xls"]:after {
+    content: "(XLS) ";
+    background-image: none;
+    display: inline;
+}
+
+/* these are so that the listed links have a the right icon once the javascript gives them a class*/
+.fwContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.int,
+.currentContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.int,
+.departmentTiles ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.int,
+.activePost ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.int,
+.grid3 ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.int,
+ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.int a {
+    list-style-image: url(//globalassets.provo.edu/image/icons/file-blue.png) !important;
+    list-style-position: inside !important;
+    margin-left: -4px;
+}
+
+.fwContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.pdf,
+.currentContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.pdf,
+.departmentTiles ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.pdf,
+.activePost ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.pdf,
+.grid3 ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.pdf,
+ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.pdf a {
+    list-style-image: url(//globalassets.provo.edu/image/icons/pdf.png) !important;
+    list-style-position: inside !important;
+    margin-left: -4px;
+}
+
+.fwContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.xls,
+.currentContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.xls,
+.departmentTiles ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.xls,
+.activePost ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.xls,
+.grid3 ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.xls,
+ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.xls a {
+    list-style-image: url(//globalassets.provo.edu/image/icons/xls.png) !important;
+    list-style-position: inside !important;
+    margin-left: -4px;
+}
+
+.fwContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.ext,
+.currentContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.ext,
+.departmentTiles ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.ext,
+.activePost ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.ext,
+.grid3 ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.ext,
+ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.ext a {
+    list-style-image: url(//globalassets.provo.edu/image/icons/external-link-gray.svg) !important;
+    list-style-position: inside !important;
+    margin-left: -4px;
+}
+
+/* correct child ul and li that do not get a class to not inherit their parent list style.*/
+ul li.int ul,
+ul li.pdf ul,
+ul li.xls ul,
+ul li.ext ul {
+    list-style-image: none;
+}
+
+/* Removes link marking from button */
+/* a:has(button)::before,*/
+a:has(button)::after,
+a.anchor::after {
+    visibility: hidden !important;
+}

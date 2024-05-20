@@ -1,0 +1,16 @@
+body.login {
+	background-color: #e3e8ee;
+}
+
+.login h1 {
+	width: 320px;
+	height: 163px;
+	margin-bottom: -20px;
+}
+
+.login h1 a {
+	background-image: url('https://globalassets.provo.edu/image/logos/pcsd-logo-website-header-x2.png');
+	background-size: contain;
+	width: 100%;
+	height: 100%;
+}

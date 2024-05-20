@@ -1,0 +1,43 @@
+.departmentTiles {
+	display: grid;
+	margin-top: 1em;
+	gap: 1em;
+}
+
+.departmentTiles>* {
+	/* padding: 1em; */
+}
+
+.departmentTiles h2 {
+	border-bottom: solid var(--main-color) 3px;
+	padding-bottom: 1em;
+}
+
+.departmentTiles ul {
+	list-style: none;
+}
+
+.departmentTiles ul li {
+	margin: 1em 0;
+}
+
+@media (min-width:600px) {
+	.departmentTiles .featured-image {
+		max-height: 150px;
+		overflow: hidden;
+	}
+
+	.departmentTiles .featured-image img {
+		margin-top: -10%;
+	}
+}
+
+
+/*responsive styles*/
+
+@media only screen and (min-width: 900px) {
+
+	.departmentTiles {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

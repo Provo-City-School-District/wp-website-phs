@@ -1,0 +1,146 @@
+.rightSidebar {
+  margin-top: -26px
+}
+
+.rightSidebar a {
+  color: var(--theme-white);
+}
+
+.rightSidebar a:hover {
+  color: var(--link-hover-color);
+}
+
+.rightSidebar.categories p {
+  color: var(--theme-black);
+}
+
+.rightSidebar ul {
+  list-style: none;
+}
+
+.rightSidebar ul li a {
+  color: var(--even-color);
+}
+
+.rightSidebar ul li a:hover {
+  color: var(--link-hover-color);
+}
+
+/* ============================================== Headings ============================================== */
+
+
+.rightSidebar h2,
+.rightSidebar h2 a {
+  color: #dce2e8;
+  font-size: 1.25em;
+  clear: both;
+}
+
+.rightSidebar h3,
+.rightSidebar h3 a {
+  color: #dce2e8;
+  font-size: 1.05em;
+}
+
+.rightSidebar.categories h2,
+.rightSidebar.categories h2 a,
+.rightSidebar.categories h3,
+.rightSidebar.categories h3 a {
+  color: var(--main-color);
+
+}
+
+/* ============================================== Utility Classes ============================================== */
+
+.sidebarImg {
+  margin: 20px 0 10px 0;
+}
+
+/* social links */
+.rightSidebar .sociallinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 45px);
+  justify-content: space-evenly;
+}
+
+.imagelist li:not(.email) a {
+  display: grid;
+  /* max-height: 35px; */
+  grid-template-columns: 35px 1fr;
+  gap: 1em;
+  align-items: center;
+  margin: 1em 0 1em 0;
+}
+
+/* ============================================== contact cards ============================================== */
+.rightSidebar .personalvCard {
+  margin: 20px 0 30px 0;
+  min-height: 150px;
+}
+
+.rightSidebar .personalvCard img {
+  max-width: 100px;
+  float: right;
+  height: auto;
+  margin-bottom: 0 0 1em 1em;
+}
+
+.rightSidebar .personalvCard ul {
+  width: calc(100% - 120px);
+  font-size: .65em;
+}
+
+.rightSidebar .personalvCard .title {
+  font-size: 1em;
+  font-style: italic;
+}
+
+.sidebar .personalvCard .assignedschool {
+  margin-top: 15px;
+}
+
+/* ============================================== Calendar ============================================== */
+.sidebar .simcal-default-calendar-list {
+  background-color: var(--theme-white);
+  color: var(--main-color);
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.simcal-default-calendar-list ul.simcal-events,
+.simcal-default-calendar-list ul.simcal-events li.simcal-event {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sidebar .simcal-default-calendar-list .simcal-event-details {
+  position: relative;
+  /* color: var(--main-color); */
+  border-bottom: 2px solid var(--main-color);
+}
+
+.sidebar .simcal-default-calendar-list .simcal-event-details p {
+  position: absolute;
+  top: 0;
+  color: var(--theme-white);
+  background-color: var(--main-color);
+  width: 100%;
+  padding-left: 5px
+}
+
+.sidebar .impDates .simcal-default-calendar-list .simcal-event-details p {
+  background-color: var(--theme-white);
+  color: var(--main-color);
+  font-size: 125%;
+  font-weight: 700;
+}
+
+.sidebar .impDates .simcal-default-calendar-list .simcal-event-details {
+  border-bottom: unset;
+}
+
+.sidebar .simcal-default-calendar-list .simcal-event-details h2 {
+  color: var(--main-color);
+  margin-top: 30px;
+  padding-left: 5px;
+}

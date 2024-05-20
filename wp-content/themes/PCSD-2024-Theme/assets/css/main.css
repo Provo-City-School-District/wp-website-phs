@@ -1,0 +1,1126 @@
+/*--------------------------------------------------------------------
+Structural Elements 
+--------------------------------------------------------------------*/
+body {
+    font-size: 1em;
+    line-height: 1.375em;
+    background-image: url(../img/background/contentarea-texture-dk.jpeg);
+}
+
+#currentPage {
+    background-color: var(--theme-white);
+    padding: 1em;
+}
+
+#rightSidebar {
+    padding: 1em;
+    color: var(--theme-white);
+    background-color: var(--main-color);
+}
+
+.sidebar #currentPage .grid2,
+.sidebar #currentPage .wpMenu,
+.sidebar #currentPage .activePost {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.activePost ul li {
+    margin: 1em 0 1em 2em;
+}
+
+.frontPageIndex {
+    margin-top: 0px;
+}
+
+@media (min-width:800px) {
+    .admin-bar .frontPageIndex {
+        margin-top: 146px !important;
+    }
+
+    .frontPageIndex {
+        margin-top: 110px;
+    }
+}
+
+@media (min-width:1000px) {
+    #mainContent.sidebar {
+        display: grid;
+        grid-template-columns: calc(100% - 300px) 300px;
+    }
+}
+
+/*
+--------------------------------------------------------------------------------------------------------------
+Post Signature
+--------------------------------------------------------------------------------------------------------------
+*/
+button {
+    background-color: var(--main-color);
+    color: var(--theme-white);
+    padding: 1em;
+    border-radius: 40px;
+}
+
+button:hover {
+    color: var(--link-hover-color);
+}
+
+.post_sig {
+    width: 400px;
+    background-color: #f1f5f9;
+    text-align: center;
+    margin: 1em auto;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+}
+
+.post_sig ul,
+.post_sig ul li {
+    list-style: none;
+    margin: 0;
+}
+
+.post_sig ul {
+    place-self: center;
+}
+
+/* 
+--------------------------------------------------------------------
+Utility
+--------------------------------------------------------------------
+*/
+#image404 {
+    float: right;
+}
+
+.contactlist li {
+    list-style: none;
+    margin: 0 0 0 0 !important;
+}
+
+.powered-by {
+    display: none;
+}
+
+.sanity {
+    position: absolute;
+    left: -99999px;
+}
+
+.novisibility,
+.hidden {
+    /* visibility: hidden; */
+    position: absolute;
+    left: -9999px;
+}
+
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+.right,
+.alignright {
+    float: right;
+    margin: 0 0 1em 1em;
+}
+
+.left,
+.alignleft {
+    float: left;
+    margin: 0 1em 1em 0;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.downarrow:after {
+    content: "\25BC";
+    font-size: 8px;
+    line-height: 1em;
+}
+
+.rightarrow:after {
+    content: "\2794";
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+.noblt {
+    list-style: none;
+}
+
+.fwtop .wp-post-image {
+    display: block;
+    margin: 0 auto
+}
+
+/* grid2 styling */
+.grid2,
+.grid2_3 {
+    display: grid;
+    gap: 1em;
+}
+
+.grid2 .slide {
+    max-width: 100%;
+}
+
+.grid2 div:nth-child(1) img {
+    margin: 0 auto;
+    display: block;
+}
+
+.grid2 div:nth-child(2):has(video),
+.grid2_3 div:nth-child(2):has(video) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+@media only screen and (min-width: 700px) {
+
+    .grid2,
+    .grid2_3 {
+        gap: 2em;
+        justify-content: space-evenly;
+    }
+
+    .grid2 {
+        grid-template-columns: repeat(2, minmax(50%, 1fr));
+    }
+
+    .grid2_3 {
+        grid-template-columns: 66% 1fr;
+    }
+
+    #stayCurrent.grid2 {
+        gap: 0;
+    }
+
+}
+
+@media only screen and (min-width: 1600px) {}
+
+/* grid3 styling */
+.grid3 {
+    display: grid;
+}
+
+/* Grid coloring */
+#currentPage .postList .grid3 .post:nth-child(even) {
+    background-color: var(--even-color);
+}
+
+#currentPage .postList .grid3 .post:nth-child(odd) {
+    background-color: var(--odd-color);
+}
+
+.grid3.altColors>* {
+    padding: 1em;
+}
+
+.grid3.altColors>*:nth-child(even) {
+    background-color: var(--even-color);
+}
+
+
+.grid3.altColors>*:nth-child(odd) {
+    background-color: var(--odd-color);
+}
+
+#currentPage ul.grid3 {
+    margin: unset;
+
+}
+
+#currentPage ul.grid3 li {
+    margin: unset;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    min-width: 200px;
+    max-width: 500px;
+}
+
+#currentPage ul.grid3 li img {
+    max-width: 100px;
+}
+
+@media only screen and (min-width: 600px) {
+    .grid3 {
+        grid-template-columns: repeat(3, 1fr);
+        /* gap: 1em; */
+        justify-content: space-evenly;
+    }
+
+    .postList .grid3 {
+        gap: unset;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+}
+
+/* Wordpress Menu Display */
+.wpMenu {
+    border-top: 1px solid var(--main-color);
+    padding: 1em 0;
+}
+
+.wpMenu ul {
+    list-style: none;
+    display: grid;
+    margin: unset;
+    gap: .5em;
+
+}
+
+.wpMenu ul li {
+    display: grid;
+    margin: unset;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    min-height: 70px;
+}
+
+.wpMenu a {
+    color: var(--theme-white);
+    padding: 1em;
+    text-align: center;
+
+    justify-self: center stretch;
+    align-self: center;
+}
+
+/* media queries */
+@media (min-width: 700px) {
+    .wpMenu ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 800px) {
+
+    #mainContent {
+        margin-top: 140px;
+        margin-bottom: 40px;
+    }
+
+    #mainContent.sidebar {
+        margin-top: 130px;
+    }
+}
+
+@media (min-width: 1100px) {
+    #mainContent {
+        margin-top: 128px;
+
+    }
+
+    #mainContent.fullwidth {
+        margin-top: 128px;
+
+    }
+
+    .admin-bar #mainContent.fullwidth {
+        margin-top: 108px;
+
+    }
+
+    .admin-bar #mainContent.sidebar {
+        margin-top: 107px;
+    }
+
+    #mainContent.sidebar {
+        margin-top: 128px;
+    }
+}
+
+@media (min-width: 1300px) {
+    .wpMenu ul {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 14px
+    }
+}
+
+
+
+
+
+/* 
+---------------------------------------------------------------------------------
+On Page Elements
+---------------------------------------------------------------------------------
+*/
+
+/* Skip nav link */
+.skip-nav-link {
+    position: absolute;
+    transform: translateY(-300%);
+    padding: 1em;
+    top: -200px;
+    transition: transform 300ms ease-in;
+}
+
+.skip-nav-link:focus {
+    transform: translateY(-165%);
+    z-index: 10001;
+    border: none;
+    top: 0px;
+    position: static;
+}
+
+
+/* PostList styling */
+.postList.policies img {
+    max-width: 50px;
+}
+
+.postList .post {
+    padding: 1em;
+}
+
+.postList .post h2 {
+    margin: 10px 0 10px 0;
+}
+
+.postList .post p {
+    margin-top: unset;
+}
+
+#homeNews .featured-image,
+.postList .featured-image {
+    max-height: 220px;
+    overflow: hidden;
+    margin: -1em -1em 1em -1em;
+
+}
+
+/* post meta  */
+.postmeta ul {
+    /* display: flex; */
+    list-style: none;
+    font-size: 0.8em;
+    gap: .5em;
+}
+
+.postmeta ul li {
+    padding-right: .5em;
+    display: inline;
+}
+
+.postmeta ul li img {
+    width: 10px;
+    margin-bottom: 0;
+    margin-right: 5px;
+    margin-left: 2px;
+}
+
+.postmeta ul li:last-of-type {
+    border-right: unset;
+}
+
+/* Archive Nav  */
+.archiveNav {
+    grid-column: 1 / span 3;
+    justify-self: end;
+    margin: 10px 0;
+}
+
+.archiveNav .page-numbers:first-child {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.archiveNav .page-numbers:last-child {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.archiveNav .page-numbers {
+    padding: 5px 10px;
+    background-image: linear-gradient(to bottom, #fff 0, #e0e0e0 100%);
+    background-repeat: repeat-x;
+    border: solid 1px #ccc;
+    text-shadow: 0 1px 0 #fff;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        0 1px 1px rgba(0, 0, 0, 0.075);
+    display: inline-block;
+    margin: 0 0 0 -5px;
+}
+
+.archiveNav .current {
+    padding-top: 6px;
+    padding-bottom: 4px;
+    font-size: 15px;
+}
+
+/*
+---------------------------------------------------------------------------------
+Stay Connected/Stay Current
+---------------------------------------------------------------------------------d
+*/
+#stayCurrent {
+    display: grid;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#currentPage #stayCurrent {
+    margin-bottom: -4px !important
+}
+
+#stayCurrent li {
+    list-style: none;
+    margin: unset;
+}
+
+#stayCurrent ul {
+    display: grid;
+    margin: unset;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+
+#stayCurrent ul:nth-child(1) {
+    grid-template-columns: repeat(3, 50px);
+}
+
+#stayCurrent ul:nth-child(2) a {
+    background-color: var(--stu-color);
+    color: #fff;
+    padding: 1em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1em;
+    gap: .5em;
+}
+
+#stayCurrent ul:nth-child(2) a:after {
+    content: '';
+    background-image: url(../icons/light/register.png);
+    background-size: cover;
+    position: unset;
+    left: unset;
+    width: 19px;
+    height: 19px;
+}
+
+#stayCurrent ul:nth-child(2) li:nth-child(2) a {
+    background-color: var(--light-grey);
+}
+
+
+
+#stayCurrent.register ul:nth-child(2) a:after {
+    background-image: url(../icons/light/register.png);
+}
+
+/* #stayCurrent ul:nth-child(2) li.calendar a:after {
+    background-image: url(../icons/light/calendar.svg);
+}
+
+#stayCurrent ul:nth-child(2) li.newsletter a:after {
+    background-image: url(../icons/light/newsletter-icon.png);
+} */
+
+@media (min-width:700px) {
+    #stayCurrent ul {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #stayCurrent ul:nth-child(2) {
+        display: flex;
+    }
+
+    #stayCurrent ul:nth-child(1) {
+        justify-self: start;
+    }
+
+    #stayCurrent ul:nth-child(2) {
+        justify-self: end;
+    }
+
+    #stayCurrent ul:nth-child(2) li {
+        margin-bottom: 0em;
+
+    }
+}
+
+
+
+
+/* Full width Styling */
+.fwtop,
+.fullwidth #stayCurrent,
+.fullwidth .wpMenu,
+.fullwidth .teasers,
+.fullwidth .employeeHighlights,
+.fullwidth .departmentTiles,
+.fullwidth h1,
+#currentPage h1,
+#currentPage #pageContent {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+
+
+/* alerts */
+#mainContent .alerts h1 a {
+    color: #fff;
+}
+
+#mainContent .alerts {
+    background-color: red;
+    color: #fff;
+    position: relative;
+    padding: 10px 10px 10px 10px;
+}
+
+#mainContent .alerts .closeAlert {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    background: transparent;
+    background-image: url(../icons/round-delete-button-white.svg);
+    background-size: cover;
+}
+
+
+/*
+--------------------------------------------------------------------
+Policy styles
+--------------------------------------------------------------------
+*/
+
+#currentPage ul.policystyle {
+    margin: 0 0 0 0;
+    overflow-x: auto;
+}
+
+#currentPage ul.policystyle li {
+    list-style-position: inside;
+    width: 100%;
+    padding-left: 40px;
+    margin: 0;
+    white-space: nowrap;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+ul.policystyle li a {
+    font-size: 1.5em;
+}
+
+ul.policystyle li:nth-child(even) {
+    background-color: #dbe1e7;
+}
+
+ul.policystyle li:nth-child(odd) {
+    background-color: #f1f5f9;
+}
+
+.policystyle article:nth-child(even) {
+    background-color: #dbe1e7;
+}
+
+.policystyle article:nth-child(odd) {
+    background-color: #f1f5f9;
+}
+
+.policystyle article {
+    padding: 5px 25px 10px;
+}
+
+.policystyle article.min-height {
+    min-height: 300px;
+}
+
+.policystyle article img {
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+ul.policystyle li:nth-child(odd) ul li,
+ul.policystyle li:nth-child(even) ul li {
+    background-color: transparent;
+}
+
+/* Policy Pages */
+.policyIcon {
+    max-width: 4.5em;
+    float: left;
+    margin: 0 1em 1em 0
+}
+
+
+/* Last Modified  */
+.lastmodified {
+    /* text-align: right; */
+    display: inline;
+    float: right;
+    ;
+}
+
+
+
+/* Directory Grid  */
+/* .directoryGrid {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.rightSidebar .directoryGrid {
+    display: unset;
+}
+
+.directoryGrid>* {
+    padding: 1em 0;
+    width: 100%;
+}
+
+.directoryGrid h2,
+.directoryGrid h3 {
+    flex: 100%;
+    background-color: unset !important;
+}
+
+@media (min-width:500px) {
+    .directoryGrid>* {
+        width: calc(100% / 3);
+    }
+}
+
+@media (min-width:1200px) {
+    .directoryGrid>* {
+        width: calc(100% / 5);
+    }
+}
+
+@media (min-width:1400px) {
+    .directoryGrid>* {
+        width: calc(100% / 7);
+    }
+}
+
+.directoryGrid>*:nth-child(even) {
+    background-color: var(--even-color);
+}
+
+.directoryGrid>*:nth-child(odd) {
+    background-color: var(--odd-color);
+}
+
+.rightSidebar .directoryGrid>* {
+    width: 100%;
+    background-color: unset;
+}
+
+.directoryGrid .personalvCard img {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: 150px;
+}
+
+.directoryGrid .personalvCard ul {
+    margin: 1em 0 1em 0 !important;
+    list-style: none;
+    text-align: center;
+    margin-left: unset;
+}
+
+.directoryGrid .personalvCard ul li {
+    font-size: 0.7em;
+    margin: 0 !important;
+}
+
+.directoryGrid .personalvCard ul li.name,
+.directoryGrid .personalvCard ul li.assignedSchool {
+    font-size: 1em;
+}
+
+.directoryGrid .personalvCard ul li.cteName {
+    font-size: 0.8em;
+} */
+
+/*
+================================================================================================================
+Directory styles
+================================================================================================================
+*/
+.staff-member-listing {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.staff-member-listing .personalvCard {
+    width: 16%;
+    padding: 20px 2%;
+    position: relative;
+}
+
+.staff-member-listing .personalvCard img {
+    margin: 0 auto;
+    display: block;
+    float: none;
+    height: 150px;
+}
+
+#currentPage .staff-member-listing .personalvCard ul {
+    margin-left: 0;
+}
+
+.staff-member-listing .personalvCard ul li {
+    list-style: none;
+    margin: 5px 0 5px 0;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+.staff-member-listing .personalvCard .title {
+    font-style: italic;
+    line-height: 15px;
+}
+
+.staff-member-listing .personalvCard .name {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.staff-member-listing>*:nth-child(even) {
+    background-color: var(--even-color);
+}
+
+.staff-member-listing>*:nth-child(odd) {
+    background-color: var(--odd-color);
+}
+
+#mainSidebar #sidebar-filter {
+    display: inline;
+    margin-top: 20px;
+    width: 75%;
+}
+
+#mainSidebar .directorySearchIcon {
+    width: 21px;
+    height: 21px;
+    margin-bottom: -5px;
+}
+
+@media (max-width: 1100px) {
+    .staff-member-listing .personalvCard {
+        width: 21%;
+    }
+}
+
+@media (max-width: 960px) {
+    .staff-member-listing .personalvCard {
+        width: 29%;
+    }
+}
+
+@media (max-width: 822px) {
+    .staff-member-listing .personalvCard {
+        width: 46%;
+    }
+}
+
+@media (max-width: 740px) {
+    .staff-member-listing .personalvCard {
+        width: 29%;
+    }
+}
+
+@media (max-width: 484px) {
+    .staff-member-listing .personalvCard {
+        width: 46%;
+    }
+}
+
+
+
+
+/* Big Red Button */
+.bigRedButton {
+    border: 1px solid black;
+    display: block;
+    text-align: center;
+    padding: 1em 0;
+    border-radius: 5px;
+    margin: 1em;
+    background-color: red;
+    color: white
+}
+
+.bigRedButton:hover {
+    background-color: purple;
+}
+
+
+
+/* Image Lists Grid */
+
+.imageListGrid {
+    display: grid;
+    list-style: none;
+}
+
+.imageListGrid img {
+    height: 25px;
+    width: 25px;
+    margin-bottom: -10px;
+    margin-right: 1em;
+}
+
+.imageListGrid li {
+    padding: 1em;
+    margin: unset !important;
+}
+
+.imageListGrid li:nth-child(even) {
+    background-color: var(--even-color);
+}
+
+.imageListGrid li:nth-child(odd) {
+    background-color: var(--odd-color);
+}
+
+@media only screen and (min-width: 600px) {
+    .imageListGrid {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+/* directory search/filter  */
+#directorySearchIcon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: -7px;
+}
+
+.rightSidebar #directorySearchIcon {
+    display: inline;
+}
+
+
+#currentPage .directoryFilter {
+    display: block;
+}
+
+#currentPage .directoryFilter #filter {
+    width: calc(100% - 35px);
+    min-height: 30px;
+    border: 1px solid var(--theme-grey)
+}
+
+#currentPage .directoryFilter label {
+    display: none;
+}
+
+@media (min-width:900px) {
+    #currentPage .directoryFilter {
+        display: none;
+    }
+}
+
+
+
+
+
+/*================================================================================================================
+form styles 
+================================================================================================================*/
+form label {
+    padding: 15px 10px 0 0;
+    /* margin: 0 0 15px 0; */
+    display: block;
+    /* width: 115px; */
+}
+
+form input {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    /* margin: 0 0 15px 0; */
+    padding: 10px;
+    /* width: calc(100% - 152px); */
+    width: calc(100% - 20px);
+}
+
+form select {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+form input[type="submit"],
+form button {
+    width: 150px;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+}
+
+form input[type="checkbox"],
+form input[type="radio"] {
+    display: inline;
+    width: auto;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+form p {
+    display: inline;
+}
+
+form .columnRadio span {
+    display: block;
+}
+
+form .columnRadio span>* {
+    display: inline;
+}
+
+form textarea {
+    clear: both;
+    width: calc(100% - 20px);
+    min-height: 200px;
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+form ul li span {
+    display: inline-block;
+    width: 155px;
+}
+
+form input[type="search"] {
+    display: inline;
+    width: calc(100% - 155px)
+}
+
+.formattachments label {
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    padding: unset;
+}
+
+form .block {
+    display: block;
+    margin-bottom: 15px;
+}
+
+/*================================================================================================================
+Table of Contents
+================================================================================================================*/
+.pageTableOfContents {
+    float: right;
+    border: 1px solid #ccc;
+    padding: 1em;
+    list-style-image: none !important;
+    list-style-type: none;
+}
+
+.pageTableOfContents li:before {
+    content: "\25BC";
+    display: inline-block;
+    margin-right: 5px;
+}
+
+a.top {
+    display: block;
+    text-align: right;
+}
+
+a.top::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid black;
+    margin-right: 5px;
+}
+
+
+/*================================================================================================================
+category styles
+================================================================================================================*/
+/* .categories-6h ul li a::before {
+    background-image: url(../img/background/);
+}
+
+.categories-6h ul li.classroom a::before {
+    background-image: url(../img/classroom.jpg);
+} */
+
+/* .categories-6h ul li.recog:before {
+    background-image: url(../img/recog.jpg);
+} */
+
+/* .categories-6h ul li.schools a::before {
+    background-image: url(../img/schools.jpg);
+}
+
+.categories-6h ul li.cte a::before {
+    background-image: url(../img/cte.jpg);
+}
+
+.categories-6h ul li.inno a::before {
+    background-image: url(../img/innovation.jpg);
+}
+
+.categories-6h ul li.business a::before {
+    background-image: url(../img/business.jpg);
+} */
+
+/* .categories-6h ul li.schoolboard a::before {
+    background-image: url(https://provo.edu/wp-content/uploads/2023/01/public-news-story-board-report.jpg);
+}
+
+.categories-6h ul li.update a::before {
+    background-image: url(https://provo.edu/wp-content/uploads/2023/01/notice-updates.jpg);
+}
+.categories-6h ul li.podcast a::before {
+    background-image: url(https://provo.edu/wp-content/uploads/2023/08/podcast-banner-with-image-226.jpg);
+} */
+
+/* Featured image Styles for Single post */
+.featured-image-full {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1000px;
+    padding-top: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 1400px) {
+    .featured-image-full {
+        padding-top: 0;
+        height: 500px;
+    }
+}

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+
+:root {
+  --main-color: #275a3b;
+  --main-offset: #d6d6d6;
+  --cal-color: #c1dc89;
+  --com-color: #54575a;
+  --stu-color: var(--main-color);
+  --body-background: #8E9BAC;
+  --even-color: #e5ebf1;
+  --odd-color: #d9e2ec;
+  --theme-white: #fff;
+  --theme-black: #000;
+  --theme-grey: #ccc;
+  --light-grey: #999;
+  --dark-grey: #777;
+  --link-color: var(--main-color);
+  --link-hover-color: var(--cal-color);
+  --contrast-text-color: #1e432f;
+}
+
+#socialIcon path {
+  fill: var(--main-color);
+}
+.sidebar #socialIcon path {
+  fill: var(--theme-white);
+}
+.siteLogo a {
+  font-family: 'Merriweather', serif;
+}
+

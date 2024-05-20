@@ -1,0 +1,44 @@
+/*
+--------------------------------------------------------------------
+Breadcrumbs
+--------------------------------------------------------------------
+*/
+#breadcrumbs {
+  font-size: 0.6em;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  color: #fff;
+  list-style: none;
+  overflow: hidden;
+  grid-column: 1 / span 2
+    /*  background-image: url(../img/background/contentarea-texture-dk.jpeg); */
+}
+
+.admin-bar #breadcrumbs {
+  padding-top: 22px;
+}
+
+#breadcrumbs li {
+  display: inline-block;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+}
+
+#breadcrumbs .separator {
+  font-size: 15px;
+  font-weight: 100;
+  color: #ccc;
+}
+
+#breadcrumbs a {
+  color: #fff;
+}
+
+#breadcrumbs a:hover {
+  color: #df6d1b;
+  text-decoration: underline;
+}
