@@ -20,6 +20,7 @@ Front page Slider
 #announcments {
 	margin-left: -10px;
 }
+
 #announcments video {
 	max-width: 100%;
 	max-height: 600px;
@@ -27,11 +28,13 @@ Front page Slider
 	margin: 0 auto;
 
 }
+
 .videoslide {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  }
+}
+
 #announcments h2 {
 	position: absolute;
 	left: -9999px
@@ -50,6 +53,16 @@ Front page Slider
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	min-height: 30vh;
+	position: relative;
+}
+
+.slide .slide-text {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0;
+	background-color: rgba(255, 233, 244, 0.9);
+	padding: 5px 1em 10px 1em;
 }
 
 #announcments .slick-arrow {
@@ -61,6 +74,7 @@ Front page Slider
 	.slide {
 		min-height: 50vh;
 	}
+
 	#announcments {
 		margin-left: unset;
 	}
@@ -197,6 +211,7 @@ Responsive styles
 		grid-column-end: span 2;
 	}
 }
+
 @media (min-width: 850px) {
 	#announcments {
 		background-image: url(../img/background/slider-background.png);

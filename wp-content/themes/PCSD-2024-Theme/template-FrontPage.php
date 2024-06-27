@@ -68,21 +68,21 @@ $theme_vars = my_theme_variables();
 				$the_query = new WP_Query($args);
 				if ($the_query->have_posts()) :
 					while ($the_query->have_posts()) : $the_query->the_post(); ?>
-						<?php
-						if (get_field('announcement_link')) {
-						?>
-							<a href="<?php echo get_field('announcement_link')  ?>">
-							<?php
-						}
-							?>
-							<article class="slide" style="background-image: url('<?php the_field('announcement_image'); ?>')"></article>
-							<?php
-							if (get_field('announcement_link')) {
-							?>
-							</a>
-						<?php
-							}
-						?>
+						<article class="slide" style="background-image: url('<?php the_field('announcement_image'); ?>')">
+							<div class="slide-text">
+								<h3><?php the_title(); ?></h3>
+								<p>
+									<?php
+										the_field('announcement_text');
+										$slideLink = get_field('announcement_link');
+										$slideLinkLabel = get_field('announcement_link_label');
+										if ($slideLink) { ?>
+											<a href="<?php echo $slideLink ?>"><?php echo $slideLinkLabel ?></a>
+									<?php }
+									?>
+								</p>
+							</div>
+						</article>
 				<?php endwhile;
 				else :
 					echo '<p>No Content Found</p>';
