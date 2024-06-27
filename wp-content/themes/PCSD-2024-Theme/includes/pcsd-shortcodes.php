@@ -60,20 +60,29 @@ function cam_ths1_func()
 }
 add_shortcode('ths1', 'cam_ths1_func');
 
-//[directory url=""]
 
+//[directory url=""]
 function directory_func($atts)
 {
-    $category = shortcode_atts(array(
-        'url' => 'something',
-    ), $atts);
-  
-    $directory_url = "{$category['url']}";
-    
-    $contents = file_get_contents($directory_url);
-    //wrap the contents with the appropriate container
-    $contents = '<div class="staff-member-listing">'.$contents.'</div>';
+	$category = shortcode_atts(array(
+		'url' => 'something',
+	), $atts);
+	$directory_url = "{$category['url']}";
 
-    return $contents;
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $directory_url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	// TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
+	// curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+	// curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+	$output = curl_exec($ch);
+	if (curl_errno($ch)) {
+		echo 'Error:' . curl_error($ch);
+	}
+	curl_close($ch);
+	$output = '<div class="staff-member-listing">' . $output . '</div>';
+	return $output;
 }
 add_shortcode('directory', 'directory_func');

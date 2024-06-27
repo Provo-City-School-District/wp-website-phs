@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+
 :root {
   --main-color: #275a3b;
   --main-offset: #d6d6d6;
@@ -12,8 +15,8 @@
   --theme-grey: #ccc;
   --light-grey: #999;
   --dark-grey: #777;
-  --link-color: #4f679e;
-  --link-hover-color: #df6d1b;
+  --link-color: var(--main-color);
+  --link-hover-color: var(--cal-color);
   --contrast-text-color: #1e432f;
 }
 
@@ -24,5 +27,6 @@
   fill: var(--theme-white);
 }
 .siteLogo a {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Merriweather', serif;
 }
+
