@@ -6,7 +6,7 @@ Design/Engineer Team: Shauna Sprunger,Rob Francom, Josh Espinoza
 
 ## Child Sites
 
-- [Provo High School](http://158.91.1.133:8082/)
+- [Provo High School](https://provohigh.provo.edu/)
 
 ## Installation
 
