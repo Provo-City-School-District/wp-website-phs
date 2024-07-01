@@ -92,6 +92,15 @@ button:hover {
 Utility
 --------------------------------------------------------------------
 */
+.anchor {
+    position: relative;
+    top: -150px;
+}
+
+.top {
+    position: initial;
+}
+
 #image404 {
     float: right;
 }
