@@ -18,7 +18,7 @@ services:
       dockerfile: ./Dockerfile
       context: .
     ports:
-      - 8082:80
+      - 8081:80
     restart: always
     env_file: .env
     environment:
@@ -36,7 +36,7 @@ services:
     container_name: phs_myadmin
     restart: "no"
     ports:
-      - 5003:80
+      - 4997:80
     environment:
       PMA_HOST: phs_db
       UPLOAD_LIMIT: 100M
