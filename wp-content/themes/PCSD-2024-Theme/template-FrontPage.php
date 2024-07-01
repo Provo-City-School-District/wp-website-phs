@@ -47,84 +47,88 @@ $theme_vars = my_theme_variables();
 
 	<h1 class="novisibility"><?php echo $theme_vars['full_school_name']; ?></h1>
 	<div class="grid2_3">
-	<section id="announcments" <?php if ($get_to_know_fields['video_or_slider'] == 'video') {echo 'class="videoslide"';} ?>>
-		<h2><?php echo $theme_vars['full_school_name']; ?> Announcements</h2>
-		<?php
+		<section id="announcments" <?php if ($get_to_know_fields['video_or_slider'] == 'video') {
+										echo 'class="videoslide"';
+									} ?>>
+			<h2><?php echo $theme_vars['full_school_name']; ?> Announcements</h2>
+			<?php
 
-		if ($get_to_know_fields['video_or_slider'] == 'video') {
-		?>
+			if ($get_to_know_fields['video_or_slider'] == 'video') {
+			?>
 
-			<video id="heroVideo" autoplay loop controls>
-				<source src="<?php echo $get_to_know_fields['video_url'] ?>" type="video/mp4">
-				Your browser does not support MP4 Format videos or HTML5 Video.
-			</video>
-		<?php
-		} elseif ($get_to_know_fields['video_or_slider'] == 'slider') {
-		?>
-			<div class="slick-wrapper">
-				<?php
-				$args = array('post_type' => 'announcement', 'posts_per_page' => 5, 'orderby'  => array('date' => 'DESC'));
-				// Variable to call WP_Query.
-				$the_query = new WP_Query($args);
-				if ($the_query->have_posts()) :
-					while ($the_query->have_posts()) : $the_query->the_post(); ?>
-						<article class="slide" style="background-image: url('<?php the_field('announcement_image'); ?>')">
-							<div class="slide-text">
-								<h3><?php the_title(); ?></h3>
-								<p>
-									<?php
+				<video id="heroVideo" autoplay loop controls>
+					<source src="<?php echo $get_to_know_fields['video_url'] ?>" type="video/mp4">
+					Your browser does not support MP4 Format videos or HTML5 Video.
+				</video>
+			<?php
+			} elseif ($get_to_know_fields['video_or_slider'] == 'slider') {
+			?>
+				<div class="slick-wrapper">
+					<?php
+					$args = array('post_type' => 'announcement', 'posts_per_page' => 5, 'orderby'  => array('date' => 'DESC'));
+					// Variable to call WP_Query.
+					$the_query = new WP_Query($args);
+					if ($the_query->have_posts()) :
+						while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<article class="slide" style="background-image: url('<?php the_field('announcement_image'); ?>')">
+								<div class="slide-text">
+									<h3><?php the_title(); ?></h3>
+									<p>
+										<?php
 										the_field('announcement_text');
 										$slideLink = get_field('announcement_link');
 										$slideLinkLabel = get_field('announcement_link_label');
 										if ($slideLink) { ?>
 											<a href="<?php echo $slideLink ?>"><?php echo $slideLinkLabel ?></a>
-									<?php }
-									?>
-								</p>
-							</div>
-						</article>
-				<?php endwhile;
-				else :
-					echo '<p>No Content Found</p>';
-				endif;
-				wp_reset_query();
-				?>
-			</div>
-		<?php
-		}
+										<?php }
+										?>
+									</p>
+								</div>
+							</article>
+					<?php endwhile;
+					else :
+						echo '<p>No Content Found</p>';
+					endif;
+					wp_reset_query();
+					?>
+				</div>
+			<?php
+			}
 
-		?>
-	</section>
-	<section><a class="center" href="<?= $theme_vars['full_calendar_link']?>">View Full School Calendar</a><?= do_shortcode($theme_vars['front_page_cal']); ?></section>
+			?>
+		</section>
+		<section><a class="center" href="<?= $theme_vars['full_calendar_link'] ?>">View Full School Calendar</a><?= do_shortcode($theme_vars['front_page_cal']); ?></section>
 	</div>
 	<div id="belowSlider">
 		<section id="stayCurrent" class="grid2 calendar">
 			<ul>
 				<li><a href="<?php echo $theme_vars['insta_link'] ?>"><?php echo get_svg('socialmedia-insta'); ?></a></li>
-				<!-- <li><a href="<?php //echo $theme_vars['twitter_link'] ?>"><?php //echo get_svg('socialmedia-twitter'); ?></a></li> -->
+				<!-- <li><a href="<?php //echo $theme_vars['twitter_link'] 
+									?>"><?php //echo get_svg('socialmedia-twitter'); 
+																				?></a></li> -->
 				<li><a href="<?php echo $theme_vars['facebook_link'] ?>"><?php echo get_svg('socialmedia-facebook'); ?></a></li>
 			</ul>
 			<?php
-				if(get_field('hero_link_address') || get_field('hero_link_2_address')) {
-					?>
-					<ul>
-						<?php
-							if(get_field('hero_link_label')) {
-								?>
-								<li class="calendar"><a href="<?php echo get_field('hero_link_address'); ?>"><?php echo get_field('hero_link_label'); ?></a></li>
-								<?php
-							}
-						?>
-						<?php
-							if(get_field('hero_link_2_label')) {
-								?>
-								<li class="newsletter"><a href="<?php echo get_field('hero_link_2_address'); ?>"><?php echo get_field('hero_link_2_label'); ?></a></li>
-								<?php
-							}
-						?>
-					</ul>
+			if (get_field('hero_link_address') || get_field('hero_link_2_address')) {
+			?>
+				<ul>
 					<?php
-				}
+					if (get_field('hero_link_label')) {
+					?>
+						<li class="calendar"><a href="<?php echo get_field('hero_link_address'); ?>"><?php echo get_field('hero_link_label'); ?></a></li>
+					<?php
+					}
+					?>
+					<?php
+					if (get_field('hero_link_2_label')) {
+					?>
+						<li class="newsletter"><a href="<?php echo get_field('hero_link_2_address'); ?>"><?php echo get_field('hero_link_2_label'); ?></a></li>
+					<?php
+					}
+					?>
+				</ul>
+			<?php
+			}
 			?>
 		</section>
 
@@ -188,7 +192,7 @@ $theme_vars = my_theme_variables();
 			See what's being discussed & shared
 			<ul class="sociallinks">
 				<li><a href="<?php echo $theme_vars['insta_link'] ?>"><?php echo get_svg('socialmedia-insta'); ?></a></li>
-				<li><a href="<?php echo $theme_vars['facebook_link'] ?>"><?php echo get_svg('socialmedia-twitter'); ?></a></li>
+				<!-- <li><a href="<?php echo $theme_vars['facebook_link'] ?>"><?php echo get_svg('socialmedia-twitter'); ?></a></li> -->
 				<li><a href="<?php echo $theme_vars['twitter_link'] ?>"><?php echo get_svg('socialmedia-facebook'); ?></a></li>
 			</ul>
 		</section> <!-- End Social Media -->
