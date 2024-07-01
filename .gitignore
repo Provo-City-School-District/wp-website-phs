@@ -3,3 +3,4 @@
 .env
 /wp-content/*
 !/wp-content/themes/
+/wp-content/themes/twenty*
