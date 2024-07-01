@@ -45,7 +45,7 @@ $theme_vars = my_theme_variables();
 	wp_reset_query();
 	?>
 
-	<h1 class="novisibility"><?php echo $theme_vars['full_school_name']; ?></h1>
+	<h2 class="novisibility"><?php echo $theme_vars['full_school_name']; ?></h2>
 	<div class="grid2_3">
 		<section id="announcments" <?php if ($get_to_know_fields['video_or_slider'] == 'video') {
 										echo 'class="videoslide"';
@@ -97,7 +97,11 @@ $theme_vars = my_theme_variables();
 
 			?>
 		</section>
-		<section><a class="center" href="<?= $theme_vars['full_calendar_link'] ?>">View Full School Calendar</a><?= do_shortcode($theme_vars['front_page_cal']); ?></section>
+		<section>
+			<h2><?php echo $theme_vars['full_school_name']; ?> Calendar</h2>
+			<?= do_shortcode($theme_vars['front_page_cal']); ?>
+			<a class="center" href="<?= $theme_vars['full_calendar_link'] ?>">View Full School Calendar</a>
+		</section>
 	</div>
 	<div id="belowSlider">
 		<section id="stayCurrent" class="grid2 calendar">
