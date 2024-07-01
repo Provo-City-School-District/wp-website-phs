@@ -6,6 +6,7 @@
 		// set URL and other appropriate options
 		curl_setopt($globalfooter, CURLOPT_URL, 'https://globalassets.provo.edu/globalpages/ada-footer.php');
 		curl_setopt($globalfooter, CURLOPT_HEADER, 0);
+		curl_setopt($globalfooter, CURLOPT_SSL_VERIFYPEER, false);
 		// grab URL and pass it to the browser
 		curl_exec($globalfooter);
 		// close cURL resource, and free up system resources
@@ -13,8 +14,8 @@
 		?>
 	</section>
 </footer>
-<?php 
-wp_footer(); 
+<?php
+wp_footer();
 if (is_page('search-results')) {
 ?>
 	<!-- <script type="text/javascript" src="//customer.cludo.com/scripts/bundles/search-script.min.js"></script> -->
