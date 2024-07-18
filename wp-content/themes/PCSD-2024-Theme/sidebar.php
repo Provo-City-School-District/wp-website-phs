@@ -21,6 +21,11 @@
 		echo do_shortcode($theme_vars['bot_sidebar_cal']);
 		echo '</section>';
 	}
+
+	//load sidebar menu if it exists
+	if (function_exists('sidebar_menu')) {
+		sidebar_menu();
+	}
 	?>
 
 </aside>
