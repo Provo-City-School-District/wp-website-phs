@@ -19,6 +19,13 @@ function my_theme_variables()
     );
     return $my_theme_variables;
 }
+function sidebar_menu()
+{
+    //TODO: add a wp menu here instead of hardcoding
+    echo "<ul>";
+    echo "<li class='pdf'><a href='https://provohigh.provo.edu/wp-content/uploads/2024/07/bell-schedule-phs-2024-2025.pdf'>2024-2025 Bell Schedule</a></li>";
+    echo "</ul>";
+}
 function pcsd_child_theme_enqueue_styles()
 {
     wp_enqueue_style('variables', get_stylesheet_directory_uri() . '/assets/css/variables.css', '', '1.0.0', false);
