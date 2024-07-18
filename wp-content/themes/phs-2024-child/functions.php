@@ -23,7 +23,7 @@ function sidebar_menu()
 {
     //TODO: add a wp menu here instead of hardcoding
     echo "<ul>";
-    echo "<li class='pdf'><a href='https://provohigh.provo.edu/wp-content/uploads/2024/07/bell-schedule-phs-2024-2025.pdf'>2024-2025 Bell Schedule</a></li>";
+    echo "<li class='pdf'><a href='https://provohigh.provo.edu/wp-content/uploads/2024/07/PHS-24-25-AB-Calendar.pdf'> 2024-2025 A/B Calendar</a></li>";
     echo "</ul>";
 }
 function pcsd_child_theme_enqueue_styles()
