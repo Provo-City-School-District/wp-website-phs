@@ -3,6 +3,7 @@ link marking
 ================================================================================================================*/
 /*For adding hidden into for listed links*/
 .fwContent ul li a:after,
+.rightSidebar ul li a:after,
 .currentContent ul li a:after,
 .departmentTiles ul li a:after,
 .activePost ul li a:after,
@@ -13,6 +14,7 @@ link marking
 }
 
 .fwContent ul li a[href*="provo.edu"]:after,
+.rightSidebar ul li a[href*="provo.edu"]:after,
 .currentContent ul li a[href*="provo.edu"]:after,
 .departmentTiles ul li a[href*="provo.edu"]:after,
 .activePost ul li a[href*="provo.edu"]:after,
@@ -23,6 +25,7 @@ link marking
 }
 
 .fwContent ul li a[href*="pdf"]:after,
+.rightSidebar ul li a[href*="pdf"]:after,
 .currentContent ul li a[href*="pdf"]:after,
 .departmentTiles ul li a[href*="pdf"]:after,
 .activePost ul li a[href*="pdf"]:after,
@@ -33,6 +36,7 @@ link marking
 }
 
 .fwContent ul li a[href*="xls"]:after,
+.rightSidebar ul li a[href*="xls"]:after,
 .currentContent ul li a[href*="xls"]:after,
 .departmentTiles ul li a[href*="xls"]:after,
 .activePost ul li a[href*="xls"]:after,
@@ -44,6 +48,7 @@ link marking
 
 /*For adding hidden into for in line links*/
 .fwContent p a:before,
+.rightSidebar p a:before,
 .currentContent p a:before,
 .departmentTiles p a:before,
 .activePost p a:before,
@@ -54,6 +59,7 @@ link marking
 }
 
 .fwContent p a[href*="provo.edu"]:before,
+.rightSidebar p a[href*="provo.edu"]:before,
 .currentContent p a[href*="provo.edu"]:before,
 .departmentTiles p a[href*="provo.edu"]:before,
 .activePost p a[href*="provo.edu"]:before,
@@ -64,6 +70,7 @@ link marking
 }
 
 .fwContent p a[href*="pdf"]:before,
+.rightSidebar p a[href*="pdf"]:before,
 .currentContent p a[href*="pdf"]:before,
 .departmentTiles p a[href*="pdf"]:before,
 .activePost p a[href*="pdf"]:before,
@@ -74,6 +81,7 @@ link marking
 }
 
 .fwContent p a[href*="xls"]:before,
+.rightSidebar p a[href*="xls"]:before,
 .currentContent p a[href*="xls"]:before,
 .departmentTiles p a[href*="xls"]:before,
 .activePost p a[href*="xls"]:before,
@@ -85,6 +93,7 @@ link marking
 
 /*For adding icon into for in line links*/
 .fwContent p a:after,
+.rightSidebar p a:after,
 .currentContent p a:after,
 .departmentTiles p a:after,
 .activePost p a:after,
@@ -99,6 +108,7 @@ link marking
 }
 
 .fwContent p a:after img,
+.rightSidebar p a:after img,
 .currentContent p a:after img,
 .departmentTiles p a:after img,
 .activePost p a:after img,
@@ -107,6 +117,7 @@ link marking
 }
 
 .fwContent p a[href*="provo.edu"]:after,
+.rightSidebar p a[href*="provo.edu"]:after,
 .currentContent p a[href*="provo.edu"]:after,
 .departmentTiles p a[href*="provo.edu"]:after,
 .activePost p a[href*="provo.edu"]:after,
@@ -116,6 +127,7 @@ link marking
 }
 
 .fwContent p a[href*="provo.edu"]:after img,
+.rightSidebar p a[href*="provo.edu"]:after img,
 .currentContent p a[href*="provo.edu"]:after img,
 .departmentTiles p a[href*="provo.edu"]:after img,
 .activePost p a[href*="provo.edu"]:after img,
@@ -124,6 +136,7 @@ link marking
 }
 
 .fwContent p a[href*="pdf"]:after,
+.rightSidebar p a[href*="pdf"]:after,
 .currentContent p a[href*="pdf"]:after,
 .departmentTiles p a[href*="pdf"]:after,
 .activePost p a[href*="pdf"]:after,
@@ -134,6 +147,7 @@ link marking
 }
 
 .fwContent p a[href*="xls"]:after,
+.rightSidebar p a[href*="xls"]:after,
 .currentContent p a[href*="xls"]:after,
 .departmentTiles p a[href*="xls"]:after,
 .activePost p a[href*="xls"]:after,
@@ -145,6 +159,7 @@ link marking
 
 /* these are so that the listed links have a the right icon once the javascript gives them a class*/
 .fwContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.int,
+.rightSidebar ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.int,
 .currentContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.int,
 .departmentTiles ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.int,
 .activePost ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.int,
@@ -156,6 +171,7 @@ ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.int a {
 }
 
 .fwContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.pdf,
+.rightSidebar ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.pdf,
 .currentContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.pdf,
 .departmentTiles ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.pdf,
 .activePost ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.pdf,
@@ -167,6 +183,7 @@ ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.pdf a {
 }
 
 .fwContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.xls,
+.rightSidebar ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.xls,
 .currentContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.xls,
 .departmentTiles ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.xls,
 .activePost ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.xls,
@@ -178,6 +195,7 @@ ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.xls a {
 }
 
 .fwContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.ext,
+.rightSidebar ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.ext,
 .currentContent ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.ext,
 .departmentTiles ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.ext,
 .activePost ul:not(.sub-nav-group, .subMenu, .menu, .pageTableOfContents) li.ext,
