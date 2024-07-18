@@ -1,30 +1,31 @@
 <?php
+$theme_version = '1.0.01';
 /*==========================================================================================
 Theme Setup
 ============================================================================================*/
 function pcsd_assets()
 {
 	//register different script files
-	wp_register_script('mainScripts', get_template_directory_uri() . '/assets/js/main_scripts.js', array('jquery', 'slickScripts'), '1.0.04', true);
+	wp_register_script('mainScripts', get_template_directory_uri() . '/assets/js/main_scripts.js', array('jquery', 'slickScripts'), $theme_version, true);
 	wp_register_script('cludoScripts', 'https://customer.cludo.com/scripts/bundles/search-script.min.js', '', '1.0.1', true);
-	wp_register_script('slickScripts', get_template_directory_uri() . '/assets/js/slick.min.js', array('jquery'), '1.0.1', true);
-	wp_register_script('linkDetection', get_template_directory_uri() . '/assets/js/linkDetection.js', '', '1.0.0', true);
-	wp_register_script('404easterEgg', get_template_directory_uri() . '/assets/js/404.js', '', '1.0.0', true);
-	wp_register_script('formfix', get_template_directory_uri() . '/assets/js/formfix.js', '', '1.0.01', true);
+	wp_register_script('slickScripts', get_template_directory_uri() . '/assets/js/slick.min.js', array('jquery'), $theme_version, true);
+	wp_register_script('linkDetection', get_template_directory_uri() . '/assets/js/linkDetection.js', '', $theme_version, true);
+	wp_register_script('404easterEgg', get_template_directory_uri() . '/assets/js/404.js', '', $theme_version, true);
+	wp_register_script('formfix', get_template_directory_uri() . '/assets/js/formfix.js', '', $theme_version, true);
 
 	//load CSS files
 	// wp_enqueue_style('variables', get_template_directory_uri() . '/assets/css/variables.css', '', '1.0.0', false);
-	wp_enqueue_style('reset', get_template_directory_uri() . '/assets/css/reset.css', '', '1.0.01', false);
-	wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css', '', '1.0.05', false);
-	wp_enqueue_style('fonts', get_template_directory_uri() . '/assets/css/font.css', '', '1.0.02', false);
-	wp_enqueue_style('header', get_template_directory_uri() . '/assets/css/header.css', '', '1.0.08', false);
-	wp_enqueue_style('breadcrumbs', get_template_directory_uri() . '/assets/css/breadcrumbs.css', '', '1.0.01', false);
-	wp_enqueue_style('footer', get_template_directory_uri() . '/assets/css/footer.css', '', '1.0.06', false);
-	wp_enqueue_style('sidebar', get_template_directory_uri() . '/assets/css/sidebar.css', '', '1.0.05', false);
+	wp_enqueue_style('reset', get_template_directory_uri() . '/assets/css/reset.css', '', $theme_version, false);
+	wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css', '', $theme_version, false);
+	wp_enqueue_style('fonts', get_template_directory_uri() . '/assets/css/font.css', '', $theme_version, false);
+	wp_enqueue_style('header', get_template_directory_uri() . '/assets/css/header.css', '', $theme_version, false);
+	wp_enqueue_style('breadcrumbs', get_template_directory_uri() . '/assets/css/breadcrumbs.css', '', $theme_version, false);
+	wp_enqueue_style('footer', get_template_directory_uri() . '/assets/css/footer.css', '', $theme_version, false);
+	wp_enqueue_style('sidebar', get_template_directory_uri() . '/assets/css/sidebar.css', '', $theme_version, false);
 	wp_enqueue_style('cludo_css', 'https://customer.cludo.com/css/templates/v2.1/essentials/cludo-search.min.css', '', '2.1', false);
-	wp_enqueue_style('slick_css', get_template_directory_uri() . '/assets/css/slick.css', '', '1.0', false);
-	wp_enqueue_style('linkmarking', get_template_directory_uri() . '/assets/css/linkmarking.css', '', '1.0', false);
-	wp_enqueue_style('printing', get_template_directory_uri() . '/assets/css/print.css', '', '1.0', false);
+	wp_enqueue_style('slick_css', get_template_directory_uri() . '/assets/css/slick.css', '', $theme_version, false);
+	wp_enqueue_style('linkmarking', get_template_directory_uri() . '/assets/css/linkmarking.css', '', $theme_version, false);
+	wp_enqueue_style('printing', get_template_directory_uri() . '/assets/css/print.css', '', $theme_version, false);
 
 
 	//load js files
