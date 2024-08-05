@@ -1043,13 +1043,16 @@ form .block {
 /*================================================================================================================
 Table of Contents
 ================================================================================================================*/
+.pageTableOfContents {
+    list-style-image: none !important;
+    list-style-type: none;
+}
+
 @media (min-width: 1400px) {
     .pageTableOfContents {
         float: right;
         border: 1px solid #ccc;
         padding: 1em;
-        list-style-image: none !important;
-        list-style-type: none;
     }
 }
 
