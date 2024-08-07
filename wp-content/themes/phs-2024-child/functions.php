@@ -12,8 +12,8 @@ function my_theme_variables()
         'bot_sidebar_cal' => '[calendar id="2066"]',
         'front_page_cal' => '[calendar id="2069"]',
         'insta_link' => 'instatest',
-        'facebook_link' => 'facebooktest',
-        'twitter_link' => 'twittertest',
+        'facebook_link' => 'https://provohigh.provo.edu/provo-high-social-media/',
+        'twitter_link' => 'https://provohigh.provo.edu/provo-high-social-media/',
         'full_calendar_link' => 'https://provohigh.provo.edu/school-calendar/'
         // 'search_icon' => get_template_directory_uri() . '/assets/icons/search-loupe.svg'
     );
