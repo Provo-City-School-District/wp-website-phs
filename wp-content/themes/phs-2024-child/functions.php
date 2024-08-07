@@ -11,7 +11,7 @@ function my_theme_variables()
         'top_sidebar_cal' => '[calendar id="2064"]',
         'bot_sidebar_cal' => '[calendar id="2066"]',
         'front_page_cal' => '[calendar id="2069"]',
-        'insta_link' => 'instatest',
+        'insta_link' => 'https://provohigh.provo.edu/provo-high-social-media/',
         'facebook_link' => 'https://provohigh.provo.edu/provo-high-social-media/',
         'twitter_link' => 'https://provohigh.provo.edu/provo-high-social-media/',
         'full_calendar_link' => 'https://provohigh.provo.edu/school-calendar/'
