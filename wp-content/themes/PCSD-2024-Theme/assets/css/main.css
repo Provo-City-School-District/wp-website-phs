@@ -505,41 +505,15 @@ Stay Connected/Stay Current
 #stayCurrent ul:nth-child(2) a {
     background-color: var(--stu-color);
     color: #fff;
-    padding: 1em;
+    padding: 1.5em;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    display: grid;
-    grid-template-columns: 1fr 1em;
-    gap: .5em;
-}
 
-#stayCurrent ul:nth-child(2) a:after {
-    content: '';
-    background-image: url(../icons/light/register.png);
-    background-size: cover;
-    position: unset;
-    left: unset;
-    width: 19px;
-    height: 19px;
 }
 
 #stayCurrent ul:nth-child(2) li:nth-child(2) a {
-    background-color: var(--light-grey);
+    background-color: var(--com-color);
 }
-
-
-
-#stayCurrent.register ul:nth-child(2) a:after {
-    background-image: url(../icons/light/register.png);
-}
-
-/* #stayCurrent ul:nth-child(2) li.calendar a:after {
-    background-image: url(../icons/light/calendar.svg);
-}
-
-#stayCurrent ul:nth-child(2) li.newsletter a:after {
-    background-image: url(../icons/light/newsletter-icon.png);
-} */
 
 @media (min-width:700px) {
     #stayCurrent ul {
@@ -682,90 +656,6 @@ ul.policystyle li:nth-child(even) ul li {
     float: right;
     ;
 }
-
-
-
-/* Directory Grid  */
-/* .directoryGrid {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1500px;
-    margin: 0 auto;
-}
-
-.rightSidebar .directoryGrid {
-    display: unset;
-}
-
-.directoryGrid>* {
-    padding: 1em 0;
-    width: 100%;
-}
-
-.directoryGrid h2,
-.directoryGrid h3 {
-    flex: 100%;
-    background-color: unset !important;
-}
-
-@media (min-width:500px) {
-    .directoryGrid>* {
-        width: calc(100% / 3);
-    }
-}
-
-@media (min-width:1200px) {
-    .directoryGrid>* {
-        width: calc(100% / 5);
-    }
-}
-
-@media (min-width:1400px) {
-    .directoryGrid>* {
-        width: calc(100% / 7);
-    }
-}
-
-.directoryGrid>*:nth-child(even) {
-    background-color: var(--even-color);
-}
-
-.directoryGrid>*:nth-child(odd) {
-    background-color: var(--odd-color);
-}
-
-.rightSidebar .directoryGrid>* {
-    width: 100%;
-    background-color: unset;
-}
-
-.directoryGrid .personalvCard img {
-    display: block;
-    margin: 0 auto;
-    width: 120px;
-    height: 150px;
-}
-
-.directoryGrid .personalvCard ul {
-    margin: 1em 0 1em 0 !important;
-    list-style: none;
-    text-align: center;
-    margin-left: unset;
-}
-
-.directoryGrid .personalvCard ul li {
-    font-size: 0.7em;
-    margin: 0 !important;
-}
-
-.directoryGrid .personalvCard ul li.name,
-.directoryGrid .personalvCard ul li.assignedSchool {
-    font-size: 1em;
-}
-
-.directoryGrid .personalvCard ul li.cteName {
-    font-size: 0.8em;
-} */
 
 /*
 ================================================================================================================
@@ -1078,48 +968,6 @@ a.top::before {
     margin-right: 5px;
 }
 
-
-/*================================================================================================================
-category styles
-================================================================================================================*/
-/* .categories-6h ul li a::before {
-    background-image: url(../img/background/);
-}
-
-.categories-6h ul li.classroom a::before {
-    background-image: url(../img/classroom.jpg);
-} */
-
-/* .categories-6h ul li.recog:before {
-    background-image: url(../img/recog.jpg);
-} */
-
-/* .categories-6h ul li.schools a::before {
-    background-image: url(../img/schools.jpg);
-}
-
-.categories-6h ul li.cte a::before {
-    background-image: url(../img/cte.jpg);
-}
-
-.categories-6h ul li.inno a::before {
-    background-image: url(../img/innovation.jpg);
-}
-
-.categories-6h ul li.business a::before {
-    background-image: url(../img/business.jpg);
-} */
-
-/* .categories-6h ul li.schoolboard a::before {
-    background-image: url(https://provo.edu/wp-content/uploads/2023/01/public-news-story-board-report.jpg);
-}
-
-.categories-6h ul li.update a::before {
-    background-image: url(https://provo.edu/wp-content/uploads/2023/01/notice-updates.jpg);
-}
-.categories-6h ul li.podcast a::before {
-    background-image: url(https://provo.edu/wp-content/uploads/2023/08/podcast-banner-with-image-226.jpg);
-} */
 
 /* Featured image Styles for Single post */
 .featured-image-full {
