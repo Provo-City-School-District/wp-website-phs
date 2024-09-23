@@ -106,11 +106,29 @@ $theme_vars = my_theme_variables();
 	<div id="belowSlider">
 		<section id="stayCurrent" class="grid2 calendar">
 			<ul>
-				<li><a href="<?php echo $theme_vars['insta_link'] ?>"><?php echo get_svg('socialmedia-insta'); ?></a></li>
-				<!-- <li><a href="<?php //echo $theme_vars['twitter_link'] 
-									?>"><?php //echo get_svg('socialmedia-twitter'); 
-										?></a></li> -->
-				<li><a href="<?php echo $theme_vars['facebook_link'] ?>"><?php echo get_svg('socialmedia-facebook'); ?></a></li>
+				<?php
+				if ($theme_vars['insta_link']) {
+				?>
+					<li><a href="<?php echo $theme_vars['insta_link'] ?>" aria-label="Instagram">
+							<?php echo get_svg('socialmedia-insta'); ?>
+						</a></li>
+				<?php
+				}
+				if ($theme_vars['facebook_link']) {
+				?>
+					<li><a href="<?php echo $theme_vars['facebook_link'] ?>" aria-label="Facebook">
+							<?php echo get_svg('socialmedia-facebook'); ?>
+						</a></li>
+				<?php
+				}
+				if ($theme_vars['twitter_link']) {
+				?>
+					<li><a href="<?php echo $theme_vars['twitter_link'] ?>" aria-label="Twitter">
+							<?php echo get_svg('socialmedia-twitter'); ?>
+						</a></li>
+				<?php
+				}
+				?>
 			</ul>
 			<?php
 			if (get_field('hero_link_address') || get_field('hero_link_2_address')) {

@@ -11,16 +11,36 @@ $theme_vars = my_theme_variables();
 	<?php custom_breadcrumbs(); ?>
 	<!-- Current Page Content -->
 	<div id="currentPage">
-		
+
 		<h1><?php the_title(); ?></h1>
 		<article id="pageContent">
-		<?php the_content(); ?>
+			<?php the_content(); ?>
 		</article>
 		<section id="stayCurrent" class="grid2 register">
 			<ul>
-				<li><a href=""><?php echo get_svg('socialmedia-insta'); ?></a></li>
-				<li><a href=""><?php echo get_svg('socialmedia-twitter'); ?></a></li>
-				<li><a href=""><?php echo get_svg('socialmedia-facebook'); ?></a></li>
+				<?php
+				if ($theme_vars['insta_link']) {
+				?>
+					<li><a href="<?php echo $theme_vars['insta_link'] ?>" aria-label="Instagram">
+							<?php echo get_svg('socialmedia-insta'); ?>
+						</a></li>
+				<?php
+				}
+				if ($theme_vars['facebook_link']) {
+				?>
+					<li><a href="<?php echo $theme_vars['facebook_link'] ?>" aria-label="Facebook">
+							<?php echo get_svg('socialmedia-facebook'); ?>
+						</a></li>
+				<?php
+				}
+				if ($theme_vars['twitter_link']) {
+				?>
+					<li><a href="<?php echo $theme_vars['twitter_link'] ?>" aria-label="Twitter">
+							<?php echo get_svg('socialmedia-twitter'); ?>
+						</a></li>
+				<?php
+				}
+				?>
 			</ul>
 			<ul>
 				<li><a href="<?php echo get_field('hero_link_address'); ?>"><?php echo get_field('hero_link_label'); ?></a></li>
