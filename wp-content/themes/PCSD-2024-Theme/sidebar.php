@@ -2,10 +2,6 @@
 	<?php
 	// gather child theme variables
 	$theme_vars = my_theme_variables();
-	//load sidebar menu if it exists
-	if (function_exists('sidebar_menu')) {
-		sidebar_menu();
-	}
 	?>
 	<h2>Follow Us</h2>
 	<ul class="sociallinks">
@@ -20,6 +16,10 @@
 	if (isset($theme_vars['top_sidebar_cal'])) {
 		echo '<h2>A/B Calendar</h2>';
 		echo do_shortcode($theme_vars['top_sidebar_cal']);
+	}
+	//load sidebar menu if it exists
+	if (function_exists('sidebar_menu')) {
+		sidebar_menu();
 	}
 	if (isset($theme_vars['bot_sidebar_cal'])) {
 		echo '<section class="impDates">';
