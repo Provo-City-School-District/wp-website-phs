@@ -89,7 +89,7 @@ $theme_vars = my_theme_variables();
 					// Loop through rows.
 					while (have_rows('highlight_links')) : the_row();
 				?>
-						<li><a href="<?php echo get_sub_field('highlight_link_address'); ?>"><strong><?php echo get_sub_field('highlight_link_label'); ?></strong></a></li>
+						<li><a href="<?php echo get_sub_field('highlight_link_address'); ?>"><?php echo get_sub_field('highlight_link_label'); ?></a></li>
 				<?php
 					// End loop.
 					endwhile;
