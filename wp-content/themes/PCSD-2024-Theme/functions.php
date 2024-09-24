@@ -5,6 +5,7 @@ Theme Setup
 ============================================================================================*/
 function pcsd_assets()
 {
+	global $theme_version;
 	//register different script files
 	wp_register_script('mainScripts', get_template_directory_uri() . '/assets/js/main_scripts.js', array('jquery', 'slickScripts'), $theme_version, true);
 	wp_register_script('cludoScripts', 'https://customer.cludo.com/scripts/bundles/search-script.min.js', '', '1.0.1', true);
