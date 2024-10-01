@@ -15,7 +15,8 @@ function my_theme_variables()
         'facebook_link' => 'https://provohigh.provo.edu/provo-high-social-media/',
         // 'twitter_link' => 'https://provohigh.provo.edu/provo-high-social-media/',
         'full_calendar_link' => 'https://provohigh.provo.edu/school-calendar/',
-        // 'search_icon' => get_template_directory_uri() . '/assets/icons/search-loupe.svg'
+        // 'search_icon' => get_template_directory_uri() . '/assets/icons/search-loupe.svg',
+        'blogLink' => 'https://provohigh.provo.edu/category/news/',
     );
     return $my_theme_variables;
 }
