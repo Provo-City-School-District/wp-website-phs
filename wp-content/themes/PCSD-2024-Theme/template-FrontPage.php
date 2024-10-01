@@ -194,7 +194,6 @@ $theme_vars = my_theme_variables();
 								?>
 								<!-- <a href="<?php the_permalink(); ?>">Read More <span class="rightarrow"></span></a> -->
 							</div>
-							<p class="readMore"><a href="<?php the_permalink(); ?>">Read More <span class="rightarrow"></span></a></p>
 							<p class="postDate"><?php echo get_the_date(); ?></p>
 
 						</article>
@@ -204,7 +203,7 @@ $theme_vars = my_theme_variables();
 				endif;
 				?>
 			</div>
-			<p class="moreNews"><a href="https://provo.edu/news/">Read More <?php echo $theme_vars['short_school_name']; ?> News <span class="rightarrow"></span></a></p>
+			<p class="moreNews"><a href="<?= $theme_vars['blogLink'] ?>">Read More <?php echo $theme_vars['short_school_name']; ?> News <span class="rightarrow"></span></a></p>
 		</section> <!-- News Home Page End -->
 
 
