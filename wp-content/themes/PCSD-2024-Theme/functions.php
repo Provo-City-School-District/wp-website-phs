@@ -1,5 +1,5 @@
 <?php
-$theme_version = '1.0.04';
+$theme_version = '1.0.05';
 /*==========================================================================================
 Theme Setup
 ============================================================================================*/
@@ -13,6 +13,7 @@ function pcsd_assets()
 	wp_register_script('linkDetection', get_template_directory_uri() . '/assets/js/linkDetection.js', '', $theme_version, true);
 	wp_register_script('404easterEgg', get_template_directory_uri() . '/assets/js/404.js', '', $theme_version, true);
 	wp_register_script('formfix', get_template_directory_uri() . '/assets/js/formfix.js', '', $theme_version, true);
+	wp_register_script('directorySearch', get_template_directory_uri() . '/assets/js/directorySearch.js', '', $theme_version, true);
 
 	//load CSS files
 	// wp_enqueue_style('variables', get_template_directory_uri() . '/assets/css/variables.css', '', '1.0.0', false);
@@ -49,6 +50,9 @@ function pcsd_assets()
 
 	if (is_404()) {
 		wp_enqueue_script('404easterEgg');
+	}
+	if (is_page('teachers-staff')) {
+		wp_enqueue_script('directorySearch');
 	}
 }
 add_action('wp_enqueue_scripts', 'pcsd_assets', 9990);
