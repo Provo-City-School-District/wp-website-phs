@@ -30,9 +30,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<a href="#mainContent" class="skip-nav-link">
-		skip navigation
-	</a>
+	<a class="skip-to-link" href="#trp-floater-ls">Skip to Translation</a>
+	<a class="skip-to-link" href="#navbar">Skip to Main Menu</a>
+	<a class="skip-to-link" href="#mainContent">Skip to Main Content</a>
 	<header id="mainHeader">
 
 		<div class="siteLogo griditem">

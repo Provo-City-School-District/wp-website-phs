@@ -368,23 +368,6 @@ On Page Elements
 ---------------------------------------------------------------------------------
 */
 
-/* Skip nav link */
-.skip-nav-link {
-    position: absolute;
-    transform: translateY(-300%);
-    padding: 1em;
-    top: -200px;
-    transition: transform 300ms ease-in;
-}
-
-.skip-nav-link:focus {
-    transform: translateY(-165%);
-    z-index: 10001;
-    border: none;
-    top: 0px;
-    position: static;
-}
-
 
 /* PostList styling */
 .postList.policies img {
@@ -985,4 +968,34 @@ a.top::before {
         padding-top: 0;
         height: 500px;
     }
+}
+
+/*================================================================================================================
+ skip link styling
+ ================================================================================================================*/
+.skip-to-link {
+    left: -999px;
+    position: absolute;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -999;
+}
+
+.skip-to-link:focus,
+.skip-to-link:active {
+    color: #fff;
+    background-color: #000;
+    left: auto;
+    top: 0;
+    width: 20%;
+    height: auto;
+    overflow: auto;
+    margin: 10px 35%;
+    padding: 5px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    z-index: 9999;
 }
