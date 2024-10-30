@@ -247,20 +247,6 @@ function pcsd_tutorial_admin_page()
 }
 
 /*==========================================================================================
-File Upload Tips
-============================================================================================*/
-
-//use post-upload-ui hook for after upload box, use pre-upload-ui hook for before upload box
-add_action('post-upload-ui', 'pcsd_media_upload_tips');
-
-function pcsd_media_upload_tips()
-{
-?>
-	<h2>Your file will be processed by the server. This may take a few minutes depending on the size of the file.</h2>
-<?php
-};
-
-/*==========================================================================================
 Editor Changes
 ============================================================================================*/
 //turn on paste_as_text by default
@@ -289,3 +275,47 @@ remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action('admin_print_scripts', 'print_emoji_detection_script');
 remove_action('admin_print_styles', 'print_emoji_styles');
+
+/*==========================================================================================
+File Upload Tips
+============================================================================================*/
+
+//use post-upload-ui hook for after upload box, use pre-upload-ui hook for before upload box
+add_action('post-upload-ui', 'pcsd_media_upload_tips');
+
+function pcsd_media_upload_tips()
+{
+?>
+	<h2>Your file will be processed by the server. This may take a few minutes depending on the size of the file.</h2>
+	<h3>Allowed File types: jpeg, mp3, mp4, png</h3>
+<?php
+};
+/*==========================================================================================
+Restrict File types allowed to upload
+============================================================================================*/
+/* sources used
+https://wordpress.stackexchange.com/questions/44777/upload-mimes-filter-has-no-effect
+https://bootstrapcreative.com/restrict-certain-file-mime-types-in-wordpress/
+https://wordpress.stackexchange.com/questions/359862/restrict-image-uploads-to-a-certain-file-type
+
+Full list of mime types
+https://codex.wordpress.org/Uploading_Files
+https://www.sitepoint.com/mime-types-complete-list/
+*/
+
+add_filter('upload_mimes', 'theme_allowed_mime_types');
+function theme_allowed_mime_types($mime_types)
+{
+	$mime_types = array(
+		//document types
+		// 'pdf' => 'application/pdf',
+		// 'xls|xlsx' => 'application/excel',
+		//image types
+		'jpg|jpeg' => 'image/jpeg',
+		'png' => 'image/png',
+		//Video/Audio
+		'mp3' => 'audio/mpeg3',
+		'mp4|m4v' => 'video/mpeg'
+	);
+	return $mime_types;
+}
