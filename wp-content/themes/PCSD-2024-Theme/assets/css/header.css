@@ -1,10 +1,10 @@
 #mainHeader {
     background: #dce3e8;
     background: linear-gradient(to bottom,
-            #4d7f71,
-            #f6f9fb 50%,
-            #f6f9fb 55%,
-            #dbe2e8);
+            var(--main-color),
+            var(--theme-white) 50%,
+            var(--theme-white) 55%,
+            var(--main-offset));
     display: grid;
     justify-items: center;
     grid-template-areas:
@@ -27,7 +27,7 @@
 .siteLogo a {
     display: flex;
     font-size: 1.5em;
-    gap:1em;
+    gap: 1em;
     align-items: center;
 }
 
@@ -57,8 +57,9 @@
 
 #navbar .calendar {
     background-color: var(--cal-color);
-   
+
 }
+
 #navbar .calendar a {
     color: var(--contrast-text-color);
 }
@@ -116,9 +117,10 @@
 }
 
 @media (min-width: 800px) {
-    .siteLogo a {  
+    .siteLogo a {
         font-size: 2em;
     }
+
     #mainHeader {
         grid-template-columns: minmax(350px, 450px) 1fr 100px;
         position: fixed;
@@ -188,23 +190,28 @@
 
     }
 }
+
 @media (min-width: 800px) and (max-width: 1100px) {
     #mainContent {
         margin-top: 128px;
     }
+
     #navbar ul {
         padding-right: 3em;
     }
+
     #navbar ul li {
         margin-bottom: -11px;
-          
+
     }
+
     #trp-floater-ls.trp-top-right {
         top: 70px;
     }
 }
 
 @media (min-width: 1100px) {
+
     /* #mainContent {
         margin-top: 140px;
     } */
@@ -225,10 +232,12 @@
     #navbar ul {
         padding-right: unset;
     }
+
     #navbar ul li {
         margin-bottom: -22px;
-          
+
     }
+
     body.admin-bar #trp-floater-ls.trp-top-right {
         top: 102px;
     }
