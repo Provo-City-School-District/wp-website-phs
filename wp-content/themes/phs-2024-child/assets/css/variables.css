@@ -3,14 +3,14 @@
 
 :root {
   --main-color: #275a3b;
-  --main-offset: #d6d6d6;
+  --main-offset: #dbe2e8;
   --cal-color: #c1dc89;
   --com-color: #54575a;
   --stu-color: var(--main-color);
   --body-background: #8E9BAC;
   --even-color: #e5ebf1;
   --odd-color: #d9e2ec;
-  --theme-white: #fff;
+  --theme-white: #f6f9fb;
   --theme-black: #000;
   --theme-grey: #ccc;
   --light-grey: #999;
@@ -23,10 +23,11 @@
 #socialIcon path {
   fill: var(--main-color);
 }
+
 .sidebar #socialIcon path {
   fill: var(--theme-white);
 }
+
 .siteLogo a {
   font-family: 'Merriweather', serif;
 }
-
