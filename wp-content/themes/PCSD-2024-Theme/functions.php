@@ -184,25 +184,3 @@ function special_nav_class($classes, $item)
 	}
 	return $classes;
 }
-
-// allowed upload types
-// add_filter('upload_mimes', 'theme_allowed_mime_types');
-// function theme_allowed_mime_types($mime_types)
-// {
-// 	// Default allowed MIME types for all users
-// 	$mime_types = array(
-// 		//image types
-// 		'jpg|jpeg' => 'image/jpeg',
-// 		'png' => 'image/png',
-// 		//Video/Audio
-// 		'mp3' => 'audio/mpeg3',
-// 		'mp4|m4v' => 'video/mpeg'
-// 	);
-
-// 	// Additional MIME types for admin users
-// 	if (current_user_can('administrator')) {
-// 		$mime_types['pdf'] = 'application/pdf';
-// 	}
-
-// 	return $mime_types;
-// }
