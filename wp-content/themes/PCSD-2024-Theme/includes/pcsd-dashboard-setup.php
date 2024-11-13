@@ -277,20 +277,6 @@ remove_action('admin_print_scripts', 'print_emoji_detection_script');
 remove_action('admin_print_styles', 'print_emoji_styles');
 
 /*==========================================================================================
-File Upload Tips
-============================================================================================*/
-
-//use post-upload-ui hook for after upload box, use pre-upload-ui hook for before upload box
-add_action('post-upload-ui', 'pcsd_media_upload_tips');
-
-function pcsd_media_upload_tips()
-{
-?>
-	<h2>Your file will be processed by the server. This may take a few minutes depending on the size of the file.</h2>
-	<h3>Allowed File types: jpeg, mp3, mp4, png</h3>
-<?php
-};
-/*==========================================================================================
 Restrict File types allowed to upload
 ============================================================================================*/
 /* sources used
