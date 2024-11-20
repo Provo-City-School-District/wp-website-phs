@@ -1,10 +1,5 @@
 #mainHeader {
-    background: #dce3e8;
-    background: linear-gradient(to bottom,
-            var(--main-color),
-            var(--theme-white) 50%,
-            var(--theme-white) 55%,
-            var(--main-offset));
+    background: var(--main-offset);
     display: grid;
     justify-items: center;
     grid-template-areas:
