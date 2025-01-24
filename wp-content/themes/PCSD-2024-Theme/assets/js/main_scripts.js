@@ -62,10 +62,37 @@ function setcookie(cname, cvalue) {
 make video on home page autoplay despite browser controls
 ==================================================================================================
 */
-var autoPlayVideo = document.getElementById("heroVideo");
-autoPlayVideo.oncanplaythrough = function () {
-  autoPlayVideo.muted = true;
-  autoPlayVideo.play();
-  autoPlayVideo.pause();
-  autoPlayVideo.play();
-};
+document.addEventListener("DOMContentLoaded", function () {
+  var autoPlayVideo = document.getElementById("heroVideo");
+  if (autoPlayVideo) {
+    autoPlayVideo.oncanplaythrough = function () {
+      autoPlayVideo.muted = true;
+      autoPlayVideo.play();
+      autoPlayVideo.pause();
+      autoPlayVideo.play();
+    };
+  } else {
+    console.error("Element with ID 'heroVideo' not found.");
+  }
+});
+alert("hello");
+/*
+=============================================================================================================
+Collapsible Content
+=============================================================================================================
+*/
+document.addEventListener("DOMContentLoaded", function () {
+  var buttons = document.querySelectorAll(".collapsible-button");
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var content = this.nextElementSibling;
+      if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        this.classList.add("exposed");
+      } else {
+        content.style.display = "none";
+        this.classList.remove("exposed");
+      }
+    });
+  });
+});
