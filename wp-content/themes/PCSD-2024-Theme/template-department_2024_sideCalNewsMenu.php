@@ -18,6 +18,13 @@ get_header();
 
 				<div>
 					<h1><?php the_title(); ?></h1>
+					<nav class="wpMenu">
+						<?php
+						wp_reset_query();
+						$topMenu = get_field('select_a_menu');
+						wp_nav_menu(array('menu' => $topMenu));
+						?>
+					</nav>
 					<?php the_content();
 					the_post_thumbnail();
 					?>
@@ -50,29 +57,28 @@ get_header();
 		?>
 			<div class="fwtop">
 				<h1><?php the_title(); ?></h1>
+				<nav class="wpMenu">
+					<?php
+					wp_reset_query();
+					$topMenu = get_field('select_a_menu');
+					wp_nav_menu(array('menu' => $topMenu));
+					?>
+				</nav>
 				<?php the_content();
 				the_post_thumbnail();
 				?>
 
 			</div>
-		<?php
-		}
-		?>
-		<nav class="wpMenu">
 			<?php
-			wp_reset_query();
-			$topMenu = get_field('select_a_menu');
-			wp_nav_menu(array('menu' => $topMenu));
-			?>
-		</nav>
-		<?php
+		}
+
 		$newscat = get_field('select_news_cat');
 		// print_r($newscat."adfadfasdfasdfaf");
 		if ($newscat) {
 			$the_query = new WP_Query(array('posts_per_page' => 1, 'cat' => $newscat));
 			if ($the_query->have_posts()) :
 				while ($the_query->have_posts()) : $the_query->the_post();
-		?>
+			?>
 					<article class="activePost">
 						<a href="<?php the_permalink(); ?>">
 							<h1><?php the_title(); ?></h1>
