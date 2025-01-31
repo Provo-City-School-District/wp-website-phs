@@ -6,7 +6,7 @@ function my_theme_variables()
         'logo' => get_stylesheet_directory_uri() . '/assets/img/site-logo.png',
         'full_school_name' => 'Provo High School',
         'short_school_name' => 'Provo High',
-        'school_address' => '1199 N. Lakeshore Dr. Provo, Utah 84601',
+        'school_address' => '1199 N. Lakeshore Dr. Provo, Utah 84601 | Phone: 801-373-6550',
         'google_tag_manager_id' => 'G-FTPJPV04N2',
         'top_sidebar_cal' => '[calendar id="2064"]',
         'bot_sidebar_cal' => '[calendar id="2066"]',
