@@ -4,14 +4,14 @@ Breadcrumbs
 --------------------------------------------------------------------
 */
 #breadcrumbs {
-  font-size: 0.6em;
+  font-size: 0.9em;
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 20px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
-  color: #fff;
+  color: var(--theme-black);
   list-style: none;
   overflow: hidden;
   grid-column: 1 / span 2
@@ -35,7 +35,7 @@ Breadcrumbs
 }
 
 #breadcrumbs a {
-  color: #fff;
+  color: var(--theme-black);
 }
 
 #breadcrumbs a:hover {
