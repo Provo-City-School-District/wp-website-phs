@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<?php $theme_vars = my_theme_variables(); ?>

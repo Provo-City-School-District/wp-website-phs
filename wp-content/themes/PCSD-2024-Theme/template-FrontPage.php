@@ -26,7 +26,7 @@ $theme_vars = my_theme_variables();
 			<article class="post">
 				<header class="postmeta">
 					<ul>
-						<li><img src="//globalassets.provo.edu/image/icons/calendar-lt.svg" alt="" /><?php the_time(' F jS, Y') ?></li>
+						<li><img src="//globalassets.provo.edu/image/icons/calendar-lt.svg" alt="calendar icon" /><?php the_time(' F jS, Y') ?></li>
 					</ul>
 					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
@@ -177,12 +177,12 @@ $theme_vars = my_theme_variables();
 									<?php
 									if (get_field('featured_image', $post_id)) {
 									?>
-										<img src="<?php echo get_field('featured_image'); ?>" alt="" class="" />
+										<img src="<?php echo get_field('featured_image'); ?>" alt="decorative image" class="" />
 									<?php
 									} elseif (has_post_thumbnail()) {
 										the_post_thumbnail();
 									} else { ?>
-										<img src="<?php echo get_stylesheet_directory_uri() . '/assets/img/building-image.jpg'; ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" width="217" height="175">
+										<img src="<?php echo get_stylesheet_directory_uri() . '/assets/img/building-image.jpg'; ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Building Image" width="217" height="175">
 									<?php } ?>
 
 								</div>

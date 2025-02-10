@@ -5,7 +5,7 @@
 	?>
 		<label for="dsearch" class="hidden" id="directorySearch">Directory Search: </label>
 		<input type="text" name="dsearch" class="text-input" aria-labelledby="directorySearch" id="sidebar-filter" value="" placeholder="Search our staff..." />
-		<img class="directorySearchIcon" src="//globalassets.provo.edu/image/icons/search-lt.svg" alt="" />
+		<img class="directorySearchIcon" src="//globalassets.provo.edu/image/icons/search-lt.svg" alt="decorative search icon" />
 	<?php
 	}
 	?>

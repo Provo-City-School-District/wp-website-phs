@@ -8,7 +8,7 @@ get_header();
 		<article id="activePost" class="activePost">
 			<h1>404 Page not Found</h1>
 			<h2>Oops! The web page you&#39;re looking for can&#39;t be found.</h2>
-			<img id="image404" class="" src="https://globalassets.provo.edu/image/404/404error1.jpg" alt="" />
+			<img id="image404" class="" src="https://globalassets.provo.edu/image/404/404error1.jpg" alt="decorative image" />
 			<!--[if lte IE 9]>
 					<script src="https://api.cludo.com/scripts/xdomain.js" slave="https://api.cludo.com/proxy.html"></script>
 					<![endif]-->
