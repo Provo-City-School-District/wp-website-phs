@@ -116,60 +116,6 @@ function shapeSpace_check_enum($redirect, $request)
 	else return $redirect;
 }
 
-
-
-
-/*==========================================================================================
-Custom Post Types
-============================================================================================*/
-
-$pcsd_custom_post_type_icon = "https://globalassets.provo.edu/image/icons/pcsd-icon-16x16.png";
-function cptui_register_my_cpts_announcement()
-{
-
-	/**
-	 * Post Type: Announcements.
-	 */
-	global $pcsd_custom_post_type_icon;
-	$labels = [
-		"name" => __("Announcements", "custom-post-type-ui"),
-		"singular_name" => __("Announcement", "custom-post-type-ui"),
-		"menu_name" => __("Announcements", "custom-post-type-ui"),
-		"all_items" => __("All Announcements", "custom-post-type-ui"),
-		"add_new" => __("Add Announcement", "custom-post-type-ui"),
-	];
-
-	$args = [
-		"label" => __("Announcements", "custom-post-type-ui"),
-		"labels" => $labels,
-		"description" => "",
-		"public" => false,
-		"publicly_queryable" => false,
-		"show_ui" => true,
-		"show_in_rest" => false,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => false,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => false,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"rewrite" => ["slug" => "announcement", "with_front" => true],
-		"query_var" => true,
-		"menu_position" => 5,
-		"menu_icon" => $pcsd_custom_post_type_icon,
-		"supports" => ["title", "editor", "thumbnail"],
-		"show_in_graphql" => false,
-	];
-
-	register_post_type("announcement", $args);
-}
-
-add_action('init', 'cptui_register_my_cpts_announcement');
-
 // adds class .active to top menu item if the current active page is the page in the menu 
 // so that we can style that differently.
 add_filter('nav_menu_css_class', 'special_nav_class', 10, 2);
