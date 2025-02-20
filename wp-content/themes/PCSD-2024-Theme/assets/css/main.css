@@ -18,6 +18,11 @@ body {
     background-color: var(--main-color);
 }
 
+.address {
+    font-size: 1.25em;
+    padding-left: 1em;
+}
+
 .sidebar #currentPage .grid2,
 .sidebar #currentPage .wpMenu,
 .sidebar #currentPage .activePost {
@@ -225,10 +230,6 @@ grid2 styling
     gap: 1em;
 }
 
-.grid2 .slide {
-    max-width: 100%;
-}
-
 .grid2 div:nth-child(1) img {
     margin: 0 auto;
     display: block;
@@ -407,10 +408,6 @@ grid2 styling
     }
 }
 
-
-
-
-
 /* 
 ---------------------------------------------------------------------------------
 On Page Elements
@@ -445,7 +442,6 @@ On Page Elements
 
 /* post meta  */
 .postmeta ul {
-    /* display: flex; */
     list-style: none;
     font-size: 0.8em;
     gap: .5em;
@@ -509,8 +505,9 @@ Stay Connected/Stay Current
 */
 #stayCurrent {
     display: grid;
-    justify-content: center;
+    text-align: center;
     padding-top: 20px;
+    min-height: 228px;
 }
 
 #currentPage #stayCurrent {
@@ -527,7 +524,6 @@ Stay Connected/Stay Current
     margin: unset;
     justify-content: center;
     grid-template-columns: 1fr;
-    gap: 1em;
 }
 
 #stayCurrent ul:nth-child(1) {
@@ -535,41 +531,50 @@ Stay Connected/Stay Current
 }
 
 #stayCurrent ul:nth-child(2) a {
-    background-color: var(--stu-color);
-    color: #fff;
-    padding: 1.5em;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    background-color: var(--theme-white);
+    color: var(--main-color);
+    padding: 0 2em;
+    /* width: 100%; */
+    display: block;
+    border: 1px solid var(--main-color);
 
-}
-
-#stayCurrent ul:nth-child(2) li:nth-child(2) a {
-    background-color: var(--com-color);
 }
 
 @media (min-width:700px) {
+    #stayCurrent {
+        min-height: 43px;
+    }
+
     #stayCurrent ul {
         grid-template-columns: 1fr 1fr;
+        gap: 1em;
     }
 
     #stayCurrent ul:nth-child(2) {
         display: flex;
+        align-items: end;
+        justify-content: flex-end;
     }
 
     #stayCurrent ul:nth-child(1) {
         justify-self: start;
     }
 
-    #stayCurrent ul:nth-child(2) {
-        justify-self: end;
-    }
-
-    #stayCurrent ul:nth-child(2) li {
-        margin-bottom: 0em;
-
+    #stayCurrent ul:nth-child(2) a {
+        padding: 0 1em;
     }
 }
 
+@media (min-width: 800px) {
+    #stayCurrent ul:nth-child(2) a {
+        padding: 0 2em;
+    }
+
+    #stayCurrent ul:nth-child(2) li {
+        /* margin-bottom: 0em; */
+        min-width: 32%;
+    }
+}
 
 
 
@@ -677,10 +682,8 @@ ul.policystyle li:nth-child(even) ul li {
 
 /* Last Modified  */
 .lastmodified {
-    /* text-align: right; */
     display: inline;
     float: right;
-    ;
 }
 
 /*
@@ -777,9 +780,6 @@ Directory styles
     }
 }
 
-
-
-
 /* Big Red Button */
 .bigRedButton {
     border: 1px solid black;
@@ -795,8 +795,6 @@ Directory styles
 .bigRedButton:hover {
     background-color: purple;
 }
-
-
 
 /* Image Lists Grid */
 
@@ -865,26 +863,19 @@ Directory styles
 }
 
 
-
-
-
 /*================================================================================================================
 form styles 
 ================================================================================================================*/
 form label {
     padding: 15px 10px 0 0;
-    /* margin: 0 0 15px 0; */
     display: block;
-    /* width: 115px; */
 }
 
 form input {
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 3px;
-    /* margin: 0 0 15px 0; */
     padding: 10px;
-    /* width: calc(100% - 152px); */
     width: calc(100% - 20px);
 }
 
@@ -900,7 +891,6 @@ form button {
     width: 150px;
     margin: 20px 0 20px 0;
     padding: 10px;
-
     border: 1px solid #ccc;
 }
 

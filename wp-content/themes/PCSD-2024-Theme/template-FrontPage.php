@@ -11,7 +11,7 @@ $theme_vars = my_theme_variables();
 ?>
 
 
-<main id="mainContent" class="homeMainContent">
+<main id="mainContent" class="homeMainContent frontpage">
 
 	<?php
 	//query any alerts
@@ -38,7 +38,7 @@ $theme_vars = my_theme_variables();
 		?>
 
 	</section>
-	<div class="notgrid2">
+	<div class="address">
 		<?php echo $theme_vars['school_address']; ?>
 	</div>
 	<?php
@@ -50,7 +50,7 @@ $theme_vars = my_theme_variables();
 		<section id="announcments" <?php if ($get_to_know_fields['video_or_slider'] == 'video') {
 										echo 'class="videoslide"';
 									} ?>>
-			<h2><?php echo $theme_vars['full_school_name']; ?> Announcements</h2>
+			<h1><?php echo $theme_vars['full_school_name']; ?> Announcements</h1>
 			<?php
 
 			if ($get_to_know_fields['video_or_slider'] == 'video') {
@@ -63,35 +63,37 @@ $theme_vars = my_theme_variables();
 			<?php
 			} elseif ($get_to_know_fields['video_or_slider'] == 'slider') {
 			?>
-				<div class="slick-wrapper">
-					<?php
-					$args = array('post_type' => 'announcement', 'posts_per_page' => 5, 'orderby'  => array('date' => 'DESC'));
-					// Variable to call WP_Query.
-					$the_query = new WP_Query($args);
-					if ($the_query->have_posts()) :
-						while ($the_query->have_posts()) : $the_query->the_post(); ?>
-							<article class="slide" style="background-image: url('<?php the_field('announcement_image'); ?>')">
-								<div class="slide-text">
-									<h3><?php the_title(); ?></h3>
-									<p>
-										<?php
-										the_field('announcement_text');
-										$slideLink = get_field('announcement_link');
-										$slideLinkLabel = get_field('announcement_link_label');
-										if ($slideLink) { ?>
-											<a href="<?php echo $slideLink ?>"><?php echo $slideLinkLabel ?></a>
-										<?php }
-										?>
-									</p>
-								</div>
-							</article>
-					<?php endwhile;
-					else :
-						echo '<p>No Content Found</p>';
-					endif;
-					wp_reset_query();
-					?>
-				</div>
+				<?php
+				$args = array(
+					'posts_per_page' => 1,
+					'post__in'  => get_option('sticky_posts'),
+					'ignore_sticky_posts' => 1
+				);
+				$sticky_query = new WP_Query($args);
+				if ($sticky_query->have_posts()) :
+					while ($sticky_query->have_posts()) : $sticky_query->the_post();
+						$background_image = '';
+						$post_id = get_the_ID(); // Define the $post_id variable
+						if (get_field('featured_image', $post_id)) {
+							$background_image = get_field('featured_image');
+						} elseif (has_post_thumbnail()) {
+							$background_image = get_the_post_thumbnail_url();
+						} else {
+							$background_image = get_stylesheet_directory_uri() . '/assets/images/building-image.jpg';
+						}
+				?>
+						<article class="sticky post" style="background-image: url('<?php echo esc_url($background_image); ?>');">
+
+
+							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+
+						</article>
+				<?php endwhile;
+					wp_reset_postdata();
+				else :
+					echo '<p>No sticky posts found</p>';
+				endif;
+				?>
 			<?php
 			}
 
@@ -100,7 +102,7 @@ $theme_vars = my_theme_variables();
 		<section>
 			<h2><?php echo $theme_vars['full_school_name']; ?> Calendar</h2>
 			<?= do_shortcode($theme_vars['front_page_cal']); ?>
-			<a class="center" href="<?= $theme_vars['full_calendar_link'] ?>">View Full School Calendar</a>
+			<a class="center" href="<?= $theme_vars['full_calendar_link'] ?>">View full calendar for more events</a>
 		</section>
 	</div>
 	<div id="belowSlider">
@@ -167,37 +169,48 @@ $theme_vars = my_theme_variables();
 			<p>The latest news from <?php echo $theme_vars['full_school_name']; ?></p>
 			<div class="stories">
 				<?php
-				$the_query = new WP_Query(array('posts_per_page' => 3, 'category_name'  => 'news', 'post_type'  => 'post'));
-				if ($the_query->have_posts()) :
-					while ($the_query->have_posts()) : $the_query->the_post(); ?>
-						<article>
-							<a href="<?php the_permalink(); ?>">
-								<div class="featured-image">
+				$sticky_posts = get_option('sticky_posts');
+				$sticky_args = array(
+					'posts_per_page' => 3,
+					'post__in' => $sticky_posts,
+					'category_name' => 'news',
+					'post_type' => 'post',
+					'ignore_sticky_posts' => 1
+				);
+				$sticky_query = new WP_Query($sticky_args);
+				$sticky_count = $sticky_query->post_count;
 
-									<?php
-									if (get_field('featured_image', $post_id)) {
-									?>
-										<img src="<?php echo get_field('featured_image'); ?>" alt="decorative image" class="" />
-									<?php
-									} elseif (has_post_thumbnail()) {
-										the_post_thumbnail();
-									} else { ?>
-										<img src="<?php echo get_stylesheet_directory_uri() . '/assets/img/building-image.jpg'; ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Building Image" width="217" height="175">
-									<?php } ?>
+				$regular_args = array(
+					'posts_per_page' => 6 - $sticky_count,
+					'category_name' => 'news',
+					'post_type' => 'post',
+					'post__not_in' => $sticky_posts,
+					'ignore_sticky_posts' => 1
+				);
+				$regular_query = new WP_Query($regular_args);
 
-								</div>
-								<h2><?php the_title(); ?></h2>
-							</a>
-							<div class="articleContent">
-								<?php
-								echo get_excerpt();
-								?>
-								<!-- <a href="<?php the_permalink(); ?>">Read More <span class="rightarrow"></span></a> -->
-							</div>
-							<p class="postDate"><?php echo get_the_date(); ?></p>
+				$all_posts = array_merge($sticky_query->posts, $regular_query->posts);
+
+				if (!empty($all_posts)) :
+					foreach ($all_posts as $post) : setup_postdata($post);
+						$background_image = '';
+						$post_id = get_the_ID(); // Define the $post_id variable
+						if (get_field('featured_image', $post_id)) {
+							$background_image = get_field('featured_image');
+						} elseif (has_post_thumbnail()) {
+							$background_image = get_the_post_thumbnail_url();
+						} else {
+							$background_image = get_stylesheet_directory_uri() . '/assets/images/building-image.jpg';
+						}
+				?>
+						<article class="post" style="background-image: url('<?php echo esc_url($background_image); ?>');">
+
+
+							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 						</article>
-				<?php endwhile;
+				<?php endforeach;
+					wp_reset_postdata();
 				else :
 					echo '<p>No Content Found</p>';
 				endif;

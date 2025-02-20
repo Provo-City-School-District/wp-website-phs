@@ -8,8 +8,14 @@ get_header();
 		<div class="postList">
 			<div class="grid3">
 				<?php
-				if (have_posts()) :
-					while (have_posts()) : the_post(); ?>
+				// Exclude sticky posts from the main query
+				$args = array(
+					'post__not_in' => get_option('sticky_posts')
+				);
+				$query = new WP_Query($args);
+
+				if ($query->have_posts()) :
+					while ($query->have_posts()) : $query->the_post(); ?>
 						<article class="post">
 							<a href="<?php the_permalink(); ?>">
 								<div class="featured-image">

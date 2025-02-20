@@ -1,20 +1,3 @@
-// jQuery.noConflict();
-jQuery(document).ready(function () {
-  jQuery("#announcments .slick-wrapper").slick({
-    autoplay: true,
-    autoplaySpeed: 10000,
-  });
-});
-
-jQuery(document).ready(function () {
-  jQuery("#slider").slick({
-    autoplay: true,
-    arrows: false,
-    mobileFirst: true,
-    autoplaySpeed: 10000,
-  });
-});
-
 //Clicking the X on the alert will close the alert section. it will also set a cookie with the name "alert"
 jQuery(".closeAlert").click(function () {
   jQuery(".alerts").css("display", "none");
