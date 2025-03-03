@@ -92,7 +92,7 @@ Home Page News
 */
 #homeNews {
 	display: block;
-	padding: 2em;
+	padding: 2em 0;
 }
 
 .frontpage .post {
@@ -134,7 +134,7 @@ Home Page News
 #homeNews .stories {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(30%, 1fr));
-	gap: 1%;
+	gap: 14px;
 	align-items: center;
 }
 
@@ -192,7 +192,7 @@ Social Icons and Juicer near the bottom
 --------------------------------------------------------------------------------------------------------------
 */
 #socialMediaFrontPage {
-	padding: 0 1em 1em 2em;
+	padding: 0 1em 1em 0;
 }
 
 #socialMediaFrontPage .sociallinks {
