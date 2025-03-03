@@ -29,6 +29,22 @@ function sidebar_menu()
 }
 function pcsd_child_theme_enqueue_styles()
 {
-    wp_enqueue_style('variables', get_stylesheet_directory_uri() . '/assets/css/variables.css', '', '1.0.0', false);
+    global $theme_version;
+    wp_enqueue_style('variables', get_stylesheet_directory_uri() . '/assets/css/variables.css', '', $theme_version, false);
 }
 add_action('wp_enqueue_scripts', 'pcsd_child_theme_enqueue_styles', 9999);
+
+function default_sidebar()
+{
+    // Replace 'sidebar_post_id' with the actual field name or method to get the post ID
+    $sidebar_post_id = 3053;
+
+    if ($sidebar_post_id) {
+        $sidebar_post = get_post($sidebar_post_id);
+        if ($sidebar_post) {
+            return apply_filters('the_content', $sidebar_post->post_content);
+        }
+    }
+
+    return 'default sidebar ID not configured';
+}
