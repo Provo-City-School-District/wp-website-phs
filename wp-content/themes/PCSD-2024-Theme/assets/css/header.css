@@ -3,7 +3,7 @@
     display: grid;
     justify-items: center;
     grid-template-areas:
-        "logo . search"
+        "logo logo search"
         "nav nav nav";
     z-index: 100;
     min-height: 128px;
@@ -11,7 +11,7 @@
 
 .siteLogo {
     grid-area: logo;
-    place-self: center;
+    place-self: start;
 }
 
 .siteLogo img {
@@ -200,7 +200,9 @@
     }
 
     .siteLogo {
-        margin-bottom: -30px;
+        margin-top: 13px;
+        margin-bottom: -45px;
+        margin-left: 1em;
     }
 
     .siteLogo img {
