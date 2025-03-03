@@ -25,6 +25,7 @@ if (getCookie("alert")) {
 Set cookie that expires at the end of the day
 =============================================================================================================
 */
+
 function setcookie(cname, cvalue) {
   var now = new Date();
   var expire = new Date();
@@ -45,6 +46,7 @@ function setcookie(cname, cvalue) {
 make video on home page autoplay despite browser controls
 ==================================================================================================
 */
+
 document.addEventListener("DOMContentLoaded", function () {
   var autoPlayVideo = document.getElementById("heroVideo");
   if (autoPlayVideo) {
@@ -58,11 +60,43 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Element with ID 'heroVideo' not found.");
   }
 });
+
 /*
 =============================================================================================================
 Collapsible Content
 =============================================================================================================
-*/ document.addEventListener("DOMContentLoaded", function () {
+*/
+
+// Collapsible Content Quit Working Feb 2025. Below is an attempt to fix the JS:
+
+/* document.addEventListener("DOMContentLoaded", function () {
+  function toggleCollapsible(button) {
+    var content = button.nextElementSibling;
+    if (!content) return;
+
+    content.classList.toggle("active");
+    button.classList.toggle("exposed");
+  }
+
+  function setupCollapsible(buttons) {
+    buttons.forEach((button) => {
+      button.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent parent collapsibles from toggling
+        toggleCollapsible(button);
+      });
+    });
+  }
+
+  function initializeCollapsibles() {
+    var allButtons = [...document.querySelectorAll(".collapsible-button, .nested-collapsible-button")];
+    setupCollapsible(allButtons);
+  }
+
+  initializeCollapsibles();
+});
+*/
+ 
+document.addEventListener("DOMContentLoaded", function () {
   function toggleCollapsible(button) {
     var content = button.nextElementSibling;
     if (!content) {
