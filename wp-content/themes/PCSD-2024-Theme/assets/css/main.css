@@ -225,7 +225,8 @@ grid2 styling
 */
 
 .grid2,
-.grid2_3 {
+.grid2_3, 
+.calgrid {
     display: grid;
     gap: 1em;
 }
@@ -246,7 +247,8 @@ grid2 styling
 @media only screen and (min-width: 700px) {
 
     .grid2,
-    .grid2_3 {
+    .grid2_3,
+    .calgrid {
         gap: 2em;
         justify-content: space-evenly;
     }
@@ -255,7 +257,8 @@ grid2 styling
         grid-template-columns: repeat(2, minmax(50%, 1fr));
     }
 
-    .grid2_3 {
+    .grid2_3,
+    .calgrid {
         grid-template-columns: 66% 1fr;
     }
 
@@ -524,7 +527,10 @@ Stay Connected/Stay Current
     margin: unset;
     justify-content: center;
     grid-template-columns: 1fr;
+    margin-bottom: -1px;
 }
+
+#stayCurrent.register ul { margin-bottom: -13px; }
 
 #stayCurrent ul:nth-child(1) {
     grid-template-columns: repeat(3, 50px);
