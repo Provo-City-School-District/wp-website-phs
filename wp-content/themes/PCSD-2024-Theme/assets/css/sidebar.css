@@ -31,15 +31,19 @@
 
 .rightSidebar h2,
 .rightSidebar h2 a {
-  color: #dce2e8;
+  color: var(--theme-white);
   font-size: 1.25em;
   clear: both;
 }
 
 .rightSidebar h3,
 .rightSidebar h3 a {
-  color: #dce2e8;
+  color: var(--theme-white);
   font-size: 1.05em;
+}
+
+.rightSidebar .simcal-nav h3 {
+  color: var(--main-color);
 }
 
 .rightSidebar.categories h2,
