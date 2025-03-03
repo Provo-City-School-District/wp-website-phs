@@ -16,36 +16,50 @@ $theme_vars = my_theme_variables();
 		<article id="pageContent">
 			<?php the_content(); ?>
 		</article>
-		<section id="stayCurrent" class="grid2 register">
-			<ul>
-				<?php
-				if ($theme_vars['insta_link']) {
+		<?php 
+		if($theme_vars['insta_link'] || $theme_vars['facebook_link'] || $theme_vars['twitter_link'] || (get_field('hero_link_address') && get_field('hero_link_label'))) {
+			?>
+			<section id="stayCurrent" class="grid2 register">
+				
+				<ul>
+					<?php
+					if ($theme_vars['insta_link']) {
+					?>
+						<li><a href="<?php echo $theme_vars['insta_link'] ?>" aria-label="Instagram">
+								<?php echo get_svg('socialmedia-insta'); ?>
+							</a></li>
+					<?php
+					}
+					if ($theme_vars['facebook_link']) {
+					?>
+						<li><a href="<?php echo $theme_vars['facebook_link'] ?>" aria-label="Facebook">
+								<?php echo get_svg('socialmedia-facebook'); ?>
+							</a></li>
+					<?php
+					}
+					if ($theme_vars['twitter_link']) {
+					?>
+						<li><a href="<?php echo $theme_vars['twitter_link'] ?>" aria-label="Twitter">
+								<?php echo get_svg('socialmedia-twitter'); ?>
+							</a></li>
+					<?php
+					}
+					?>
+				</ul>
+				<?php 
+					if(get_field('hero_link_address') && get_field('hero_link_label')) {
+						?>
+						<ul>
+							<li><a href="<?php echo get_field('hero_link_address'); ?>"><?php echo get_field('hero_link_label'); ?></a></li>
+						</ul>
+						<?php
+					}
 				?>
-					<li><a href="<?php echo $theme_vars['insta_link'] ?>" aria-label="Instagram">
-							<?php echo get_svg('socialmedia-insta'); ?>
-						</a></li>
-				<?php
-				}
-				if ($theme_vars['facebook_link']) {
-				?>
-					<li><a href="<?php echo $theme_vars['facebook_link'] ?>" aria-label="Facebook">
-							<?php echo get_svg('socialmedia-facebook'); ?>
-						</a></li>
-				<?php
-				}
-				if ($theme_vars['twitter_link']) {
-				?>
-					<li><a href="<?php echo $theme_vars['twitter_link'] ?>" aria-label="Twitter">
-							<?php echo get_svg('socialmedia-twitter'); ?>
-						</a></li>
-				<?php
-				}
-				?>
-			</ul>
-			<ul>
-				<li><a href="<?php echo get_field('hero_link_address'); ?>"><?php echo get_field('hero_link_label'); ?></a></li>
-			</ul>
-		</section>
+			</section>
+			<?php
+		}
+		?>
+	
 		<nav class="wpMenu">
 			<?php
 			wp_reset_query();
@@ -127,9 +141,7 @@ $theme_vars = my_theme_variables();
 							<?php
 							}
 							?>
-							<!-- <h2><?php echo wpautop($tile['tile_title']); ?> </h2> -->
 							<h2><?php echo $tile['tile_title']; ?> </h2>
-							<!-- <?php echo wpautop($tile['tile_content']); ?> -->
 							<?php echo $tile['tile_content']; ?>
 						</aside>
 				<?php
